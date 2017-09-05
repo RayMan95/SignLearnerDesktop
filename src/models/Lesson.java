@@ -5,11 +5,37 @@
  */
 package models;
 
+import java.util.ArrayList;
+
 /**
  * Class representing the Lesson object in the SignLearner tool
  * @author  Luveshen Pillay, Christopher Mudongo, Rayaan Fakier
  * @date 2017-09-05
  */
 public class Lesson {
+    private String ID, title, category;
+    ArrayList<LessonActivity> lessonactivities;
+    LessonActivity currActivity;
+    
+    public String[] getAllActivityAttributes(){
+        return null;
+    }
+    
+    public String getID(){
+        return null;
+    }
+    
+    public String getTitle(){
+        return null;
+    }
+    
+    public String getCategory(){
+        return null;
+    }
+    
+    @Override
+    public String toString(){
+        return null;
+    }
     
 }

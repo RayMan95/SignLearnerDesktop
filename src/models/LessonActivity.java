@@ -11,5 +11,30 @@ package models;
  * @date 2017-09-05
  */
 public class LessonActivity {
+    private String screenID, videoUrl, videoCaption, imagePath;
     
+    public String getScreenID(){
+        return null;
+    }
+    
+    public String getVideoUrl(){
+        return null;
+    }
+    
+    public String getVideoCaption(){
+        return null;
+    }
+    
+    public String getImagePath(){
+        return null;
+    }
+    
+    public String[] getAttributes(){
+        return null;
+    }
+    
+    @Override
+    public String toString(){
+        return null;
+    }
 }
