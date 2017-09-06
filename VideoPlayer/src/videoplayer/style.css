@@ -1,0 +1,40 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    
+*/
+
+.BG{-fx-background-color: #000000}
+
+.VBG{-fx-background-color: #cccccc}
+
+.playIcon {-fx-background-image: url("button_icon/play_icon.png");
+           -fx-background-size: 27px;
+           -fx-background-repeat: no-repeat;
+           -fx-background-position: 55%;
+          
+}
+
+.pauseIcon {-fx-background-image: url("button_icon/pause_icon.png");
+           -fx-background-size: 40px;
+           -fx-background-repeat: no-repeat;
+           -fx-background-position: 55%;
+          
+}
+
+.nextIcon {-fx-background-image: url("button_icon/next.png");
+           -fx-background-size: 27px;
+           -fx-background-repeat: no-repeat;
+           -fx-background-position: 55%;
+          
+}
+
+.previousIcon {-fx-background-image: url("button_icon/previous.png");
+           -fx-background-size: 27px;
+           -fx-background-repeat: no-repeat;
+           -fx-background-position: 55%;
+          
+}

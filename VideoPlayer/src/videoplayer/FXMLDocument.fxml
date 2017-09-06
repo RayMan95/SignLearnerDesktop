@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Rectangle2D?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.Group?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.effect.Blend?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.media.MediaView?>
+
+
+<Group xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="videoplayer.FXMLDocumentController">
+   <children>
+      <AnchorPane id="AnchorPane" prefHeight="369.0" prefWidth="549.0" styleClass="BG" stylesheets="@style.css">
+          <children>
+            <MediaView fx:id="mediaView" fitHeight="480.0" fitWidth="650.0" preserveRatio="false" styleClass="VBG">
+               <viewport>
+                  <Rectangle2D />
+               </viewport>
+            </MediaView>
+            <HBox alignment="CENTER" layoutY="466.0" prefHeight="34.0" prefWidth="650.0" spacing="30.0" styleClass="VBG" stylesheets="@style.css">
+               <children>
+                  <Button fx:id="Pause2" mnemonicParsing="false" onAction="#clickPause" prefHeight="31.0" prefWidth="79.0" styleClass="previousIcon" stylesheets="@style.css" />
+                  <Button fx:id="Play" mnemonicParsing="false" onAction="#clickPlay" prefHeight="31.0" prefWidth="54.0" styleClass="playIcon" stylesheets="@style.css" textOverrun="CLIP">
+                     <cursor>
+                        <Cursor fx:constant="OPEN_HAND" />
+                     </cursor>
+                  </Button>
+                  <Button fx:id="Pause" mnemonicParsing="false" onAction="#clickPause" prefHeight="31.0" prefWidth="54.0" styleClass="pauseIcon" stylesheets="@style.css">
+                     <cursor>
+                        <Cursor fx:constant="OPEN_HAND" />
+                     </cursor>
+                  </Button>
+                  <Button fx:id="Pause1" mnemonicParsing="false" onAction="#clickPause" prefHeight="31.0" prefWidth="78.0" styleClass="nextIcon" stylesheets="@style.css" />
+               </children>
+               <effect>
+                  <Blend mode="MULTIPLY" />
+               </effect>
+            </HBox>
+          </children>
+      </AnchorPane>
+   </children>
+</Group>
