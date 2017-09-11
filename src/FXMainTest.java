@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 
+import java.io.File;
 import java.io.IOException;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
@@ -25,6 +26,8 @@ import org.xml.sax.XMLReader;
  * @author Ray
  */
 public class FXMainTest extends Application {
+    
+    private final static String FILE_NAME = "../icdl/xml/e learner self study.xml"; // start pos: SignLearnerDesktop/dist
     
     @Override
     public void start(Stage primaryStage) {
@@ -64,7 +67,19 @@ public class FXMainTest extends Application {
         
         XMLReader xmlReader = saxParser.getXMLReader();
         xmlReader.setContentHandler(new XMLParser());
-        xmlReader.parse(XMLParser.convertToFileURL("blank"));
+        xmlReader.parse(convertToFileURL());
+    }
+    
+    public  static String convertToFileURL() {
+        String path = new File(FILE_NAME).getAbsolutePath();
+        if (File.separatorChar != '/') {
+            path = path.replace(File.separatorChar, '/');
+        }
+
+        if (!path.startsWith("/")) {
+            path = "/" + path;
+        }
+        return "file:" + path;
     }
     
 }
