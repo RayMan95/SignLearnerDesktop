@@ -58,9 +58,7 @@ public class FXMainTest extends Application {
      */
     public static void main(String[] args) throws SAXException, ParserConfigurationException, IOException {
 //        launch(args);
-//        XMLParser xmlp = new XMLParser();
         
-//        xmlp.parse();
         SAXParserFactory spf = SAXParserFactory.newInstance();
         spf.setNamespaceAware(true);
         SAXParser saxParser = spf.newSAXParser();
@@ -68,9 +66,16 @@ public class FXMainTest extends Application {
         XMLReader xmlReader = saxParser.getXMLReader();
         xmlReader.setContentHandler(new XMLParser());
         xmlReader.parse(convertToFileURL());
+        
+        System.exit(0);
     }
+
+    /**
+     * Resolves URL of absolute address of file
+     * @return 
+     */
     
-    public  static String convertToFileURL() {
+    public static String convertToFileURL() {
         String path = new File(FILE_NAME).getAbsolutePath();
         if (File.separatorChar != '/') {
             path = path.replace(File.separatorChar, '/');

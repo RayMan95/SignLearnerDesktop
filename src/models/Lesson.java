@@ -13,9 +13,15 @@ import java.util.ArrayList;
  * @date 2017-09-05
  */
 public class Lesson {
-    private String ID, title, category;
+    private final String TITLE, ID, CATEGORY;
     ArrayList<LessonActivity> lessonactivities;
     LessonActivity currActivity;
+    
+    public Lesson(String title, String id, String cat){
+        TITLE = title;
+        ID = id;
+        CATEGORY = cat;
+    }
     
     public String[] getAllActivityAttributes(){
         return null;

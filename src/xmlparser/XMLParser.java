@@ -30,9 +30,9 @@ public class XMLParser extends DefaultHandler {
     private final String KEY_LESSON ="lesson";
     private final String KEY_SCREEN = "screen";
     private final String KEY_SCREENID = "screenID";
-    private final String KEY_IMAGE ="image";
     private final String KEY_VIDEO = "video";
     private final String KEY_VIDEO_CAPTION = "vid_caption";
+    private final String KEY_IMAGE ="image";
 //    private final String LOGTAG = "COURSE_PARSER";
     
     private final static String FILE_NAME = "../icdl/xml/e learner self study.xml"; // start pos: SignLearnerDesktop/dist
@@ -41,38 +41,15 @@ public class XMLParser extends DefaultHandler {
     private Lesson currLesson = null;
     private LessonActivity currActivity = null;
     
-    public ArrayList<Lesson> lessons = new ArrayList<Lesson>();
-    public ArrayList<LessonActivity> screenss = new ArrayList<LessonActivity>();
-    
-    /*
-    * Constructor
-    * 
-    */
-    public ArrayList<Lesson> parse (){
-        lessons = new ArrayList<>();
-        try{
-            File file = new File(FILE_NAME);
-            if (!file.exists()){
-                System.out.println("File name: " + FILE_NAME);
-                throw new FileNotFoundException();                
-            }
-            System.out.println("Found!");
-        }
-        catch (FileNotFoundException fnfe){
-            fnfe.printStackTrace();
-            
-            System.exit(1);
-        }
+    public ArrayList<Lesson> lessons = new ArrayList<>();
+    public ArrayList<LessonActivity> activities = new ArrayList<>();
         
-        return lessons;
-    }
-    
-    private HashMap tags;
+    private Stack<String> tags;
     
     @Override
     public void startDocument() throws SAXException {
         lessons = new ArrayList<>();
-        tags = new HashMap();
+        tags = new Stack<>();
     }
     
     @Override
@@ -84,33 +61,39 @@ public class XMLParser extends DefaultHandler {
 
     String key = localName;
     
-    if(localName.equals(KEY_COURSE)){
-        System.out.println(KEY_COURSE);
-    }
-    else if(localName.equals(KEY_UNIT)){
-        System.out.println(KEY_UNIT);
-    }
-    else if(localName.equals(KEY_LESSON)){
-        System.out.println(KEY_LESSON);
-    }
-    else if(localName.equals(KEY_SCREEN)){
-        System.out.println(KEY_SCREEN);
-    }
-    else if(localName.equals(KEY_SCREENID)){
-        System.out.println(KEY_SCREENID);
-    }
-    else if(localName.equals(KEY_IMAGE)){
-        System.out.println(KEY_IMAGE);
-    }
-    else if(localName.equals(KEY_VIDEO)){
-        System.out.println(KEY_VIDEO);
-    }
-    else if(localName.equals(KEY_VIDEO_CAPTION)){
-        System.out.println(KEY_VIDEO_CAPTION);
-    }
-    else {
-        System.out.println("Unknown");
-    }
+        switch (localName) {
+            case KEY_COURSE:
+                System.out.println(KEY_COURSE); // skip for now
+                break;
+            case KEY_UNIT:
+                System.out.println(KEY_UNIT); // skip for now
+                break;
+            case KEY_LESSON:
+                String title, id, category;
+                title = atts.getValue(0);
+                id = atts.getValue(1);
+                category = atts.getValue(2);
+                currLesson = new Lesson(title, id, category);
+                break;
+            case KEY_SCREEN:
+                currActivity = new LessonActivity();
+                break;
+            case KEY_SCREENID:
+                System.out.println(KEY_SCREENID);
+                break;
+            case KEY_VIDEO:
+                System.out.println(KEY_VIDEO);
+                break;
+            case KEY_VIDEO_CAPTION:
+                System.out.println(KEY_VIDEO_CAPTION);
+                break;
+            case KEY_IMAGE:
+                System.out.println(KEY_IMAGE);
+                break;
+            default:
+                System.out.println("Unknown");
+                break;
+        }
 }
 
     @Override
