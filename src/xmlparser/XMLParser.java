@@ -34,6 +34,8 @@ public class XMLParser extends DefaultHandler {
     private final String KEY_VIDEO_CAPTION = "vid_caption";
     private final String KEY_IMAGE ="image";
 //    private final String LOGTAG = "COURSE_PARSER";
+    private boolean parsingTextNode = false;
+    private StringBuilder STR_BUILDER;
     
     private final static String FILE_NAME = "../icdl/xml/e learner self study.xml"; // start pos: SignLearnerDesktop/dist
 
@@ -59,14 +61,14 @@ public class XMLParser extends DefaultHandler {
                          Attributes atts)
     throws SAXException {
 
-    String key = localName;
+        String key = localName;
     
         switch (localName) {
             case KEY_COURSE:
-                System.out.println(KEY_COURSE); // skip for now
+//                System.out.println(KEY_COURSE); // skip for now
                 break;
             case KEY_UNIT:
-                System.out.println(KEY_UNIT); // skip for now
+//                System.out.println(KEY_UNIT); // skip for now
                 break;
             case KEY_LESSON:
                 String title, id, category;
@@ -79,22 +81,84 @@ public class XMLParser extends DefaultHandler {
                 currActivity = new LessonActivity();
                 break;
             case KEY_SCREENID:
-                System.out.println(KEY_SCREENID);
+                parsingTextNode = true;
+                STR_BUILDER = new StringBuilder();
                 break;
             case KEY_VIDEO:
-                System.out.println(KEY_VIDEO);
+                parsingTextNode = true;
+                STR_BUILDER = new StringBuilder();
                 break;
             case KEY_VIDEO_CAPTION:
-                System.out.println(KEY_VIDEO_CAPTION);
+                parsingTextNode = true;
+                STR_BUILDER = new StringBuilder();
                 break;
             case KEY_IMAGE:
-                System.out.println(KEY_IMAGE);
+                parsingTextNode = true;
+                STR_BUILDER = new StringBuilder();
                 break;
             default:
-                System.out.println("Unknown");
+                System.out.println("Unknown tag = ERRRORRR");
                 break;
         }
-}
+    }
+    
+    @Override
+    public void endElement(String namespaceURI,
+                         String localName,
+                         String qName)
+    throws SAXException {
+        String text = "";
+        switch (localName){
+            case KEY_LESSON:
+                if (!activities.isEmpty())
+                    currLesson.setActivities(activities);
+                lessons.add(currLesson);
+                break;
+                
+            case KEY_SCREEN:
+                activities.add(currActivity);
+                break;
+                
+            case KEY_SCREENID:
+                parsingTextNode = false;
+                text = STR_BUILDER.toString();
+                STR_BUILDER = null;
+                currActivity.setScreenID(text);
+                break;
+                
+            case KEY_VIDEO:
+                parsingTextNode = false;
+                text = STR_BUILDER.toString();
+                STR_BUILDER = null;
+                currActivity.setVideoUrl(text);
+                break;
+                
+            case KEY_VIDEO_CAPTION:
+                parsingTextNode = false;
+                text = STR_BUILDER.toString();
+                STR_BUILDER = null;
+                currActivity.setVideoCaption(text);
+                break;
+                
+            case KEY_IMAGE:
+                parsingTextNode = false;
+                text = STR_BUILDER.toString();
+                STR_BUILDER = null;
+                currActivity.setImagePath(text);
+                break;
+        }
+    
+    
+    }
+    
+    @Override
+    public void characters (char ch[], int start, int length)
+        throws SAXException{
+        
+        if (parsingTextNode)
+            STR_BUILDER.append(ch, start, length); // append when parsing nodes
+    
+    }
 
     @Override
     public void endDocument() throws SAXException {
@@ -110,7 +174,7 @@ public class XMLParser extends DefaultHandler {
  
     
 }
-//
+
 //    public ArrayList<Lesson> parse(Context context)  {
 //
 //        try {

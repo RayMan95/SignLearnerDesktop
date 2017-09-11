@@ -13,24 +13,41 @@ package models;
 public class LessonActivity {
     private String screenID, videoUrl, videoCaption, imagePath;
     
+    public void setScreenID(String scrID){
+        screenID = scrID;
+    }
+    
+    public void setVideoUrl(String vidURL){
+        videoUrl = vidURL;
+    }
+    
+    public void setVideoCaption(String vidCap){
+        videoCaption = vidCap;
+    }
+    
+    public void setImagePath(String imgPath){
+        imagePath = imgPath;
+    }
+    
     public String getScreenID(){
-        return null;
+        return screenID;
     }
     
     public String getVideoUrl(){
-        return null;
+        return videoUrl;
     }
     
     public String getVideoCaption(){
-        return null;
+        return videoCaption;
     }
     
     public String getImagePath(){
-        return null;
+        return imagePath;
     }
     
     public String[] getAttributes(){
-        return null;
+        String[] atts = {screenID, videoUrl, videoCaption, imagePath};
+        return atts;
     }
     
     @Override

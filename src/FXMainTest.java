@@ -64,9 +64,12 @@ public class FXMainTest extends Application {
         SAXParser saxParser = spf.newSAXParser();
         
         XMLReader xmlReader = saxParser.getXMLReader();
-        xmlReader.setContentHandler(new XMLParser());
+        XMLParser xmlp = new XMLParser();
+        xmlReader.setContentHandler(xmlp);
         xmlReader.parse(convertToFileURL());
         
+        for (Lesson l : xmlp.lessons)
+            System.out.println(l.toString());
         System.exit(0);
     }
 

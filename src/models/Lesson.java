@@ -14,7 +14,7 @@ import java.util.ArrayList;
  */
 public class Lesson {
     private final String TITLE, ID, CATEGORY;
-    ArrayList<LessonActivity> lessonactivities;
+    ArrayList<LessonActivity> lessonActivities;
     LessonActivity currActivity;
     
     public Lesson(String title, String id, String cat){
@@ -23,25 +23,29 @@ public class Lesson {
         CATEGORY = cat;
     }
     
+    public void setActivities(ArrayList<LessonActivity> activities){
+        lessonActivities = activities;
+    }
+    
     public String[] getAllActivityAttributes(){
         return null;
     }
     
-    public String getID(){
-        return null;
+    public String getTitle(){
+        return TITLE;
     }
     
-    public String getTitle(){
-        return null;
+    public String getID(){
+        return ID;
     }
     
     public String getCategory(){
-        return null;
+        return CATEGORY;
     }
     
     @Override
     public String toString(){
-        return null;
+        return TITLE + " " + ID + " " + CATEGORY;
     }
     
 }
