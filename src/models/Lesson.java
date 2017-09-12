@@ -16,7 +16,7 @@ import java.util.Objects;
 public class Lesson {
     private final String TITLE, ID, CATEGORY;
     ArrayList<LessonActivity> lessonActivities;
-    LessonActivity currActivity;
+    int index = 0;
     
     /**
      * Only constructor
@@ -30,6 +30,34 @@ public class Lesson {
         CATEGORY = cat;
     }
     
+    public boolean hasActivities(){
+        return lessonActivities != null || lessonActivities.size() > 0;
+    }
+    
+    public boolean hasNext(){
+        if (!hasActivities()) return false;
+        return index < (lessonActivities.size()-1); 
+    }
+    
+    public boolean hasPrevious(){
+        if (!hasActivities()) return false;
+        return index > 0;
+    }
+    
+    public LessonActivity getNext(){
+        LessonActivity activity = null;
+        ++index;
+        if (hasNext()) activity = lessonActivities.get(index);
+        return activity;
+    }
+    
+    public LessonActivity getPrevious(){
+        LessonActivity activity = null;
+        --index;
+        if (hasPrevious()) activity = lessonActivities.get(index);
+        return activity;
+    }
+    
     // Getters and setters
     
     public void setActivities(ArrayList<LessonActivity> activities){
@@ -39,8 +67,20 @@ public class Lesson {
         }
     }
     
-    public String[] getAllActivityAttributes(){
-        return null;
+    public LessonActivity getActivity(String activityID){
+        LessonActivity activity = null;
+        for (LessonActivity la : lessonActivities){
+            if (la.getScreenID().equals(activityID)) activity = la;
+        }
+        
+        return activity;
+    }
+    
+    public LessonActivity getActivity(int index){
+        if (!hasActivities()) return null;
+        if (index < 0 || index >= lessonActivities.size()) return null;
+        
+        return lessonActivities.get(index);
     }
     
     public String getTitle(){
