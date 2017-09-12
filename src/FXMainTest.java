@@ -46,11 +46,11 @@ public class FXMainTest extends Application {
         
 //        ArrayList<LessonList> units = CONTROLLER.getUnits(); // fully built-up units
         
-        selectLesson("06");
-        selectActivity("lesson_description_1");
-        nextActivity();
-        prevActivity();
-        lessonList();
+//        selectLesson("06");
+//        selectActivity("step_5");
+//        nextActivity();
+//        prevActivity();
+//        lessonList();
         
         System.exit(0);
     }
@@ -59,7 +59,7 @@ public class FXMainTest extends Application {
     private static void selectLesson(String selectedLessonID){
         Lesson lesson = CONTROLLER.getLesson(selectedLessonID);
         if (lesson == null) ; // do something
-        else System.out.println(lesson.toString());
+//        else System.out.println(lesson.toString());
         // set view accordingly
     }
     
@@ -67,7 +67,7 @@ public class FXMainTest extends Application {
     private static void selectActivity(String selectedScreenID){
         LessonActivity la = CONTROLLER.getActivity(selectedScreenID);
         if (la == null) ; // do something
-        else System.out.println(la.toString());
+//        else System.out.println(la.toString());
         // set view accordingly
     }
     

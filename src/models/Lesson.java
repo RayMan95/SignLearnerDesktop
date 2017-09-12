@@ -75,16 +75,25 @@ public class Lesson {
     
     public LessonActivity getActivity(String activityID){
         LessonActivity activity = null;
+        int i = 0;
         for (LessonActivity la : lessonActivities){
-            if (la.getScreenID().equals(activityID)) activity = la;
+            
+            if (la.getScreenID().equals(activityID)){
+                activity = la;
+                index = i;
+            }
+            ++i;
         }
         
         return activity;
     }
     
-    public LessonActivity getActivity(int index){
+    public LessonActivity getActivity(int i){
         if (!hasActivities()) return null;
-        if (index < 0 || index >= lessonActivities.size()) return null;
+        if (i < 0 || i >= lessonActivities.size()){
+            index = i;
+            return null;
+        }
         
         return lessonActivities.get(index);
     }
