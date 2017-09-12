@@ -52,6 +52,9 @@ public class LessonActivity {
     
     @Override
     public String toString(){
-        return null;
+        String details = screenID + ") " + videoUrl + " " + videoCaption;
+        if(imagePath != null) details += " " + imagePath;
+        else details += " [no image]";
+        return details;
     }
 }

@@ -6,6 +6,7 @@
 
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -31,24 +32,6 @@ public class FXMainTest extends Application {
     
     @Override
     public void start(Stage primaryStage) {
-//        Button btn = new Button();
-//        btn.setText("Say 'Hello World'");
-//        btn.setOnAction(new EventHandler<ActionEvent>() {
-//            
-//            @Override
-//            public void handle(ActionEvent event) {
-//                System.out.println("Hello World!");
-//            }
-//        });
-//        
-//        StackPane root = new StackPane();
-//        root.getChildren().add(btn);
-//        
-//        Scene scene = new Scene(root, 300, 250);
-//        
-//        primaryStage.setTitle("Hello World!");
-//        primaryStage.setScene(scene);
-//        primaryStage.show();
     }
 
     /**
@@ -68,14 +51,14 @@ public class FXMainTest extends Application {
         xmlReader.setContentHandler(xmlp);
         xmlReader.parse(convertToFileURL());
         
-        for (Lesson l : xmlp.lessons)
-            System.out.println(l.toString());
+        ArrayList<LessonList> units = xmlp.getUnits(); // fully built-up units
+        
         System.exit(0);
     }
 
     /**
-     * Resolves URL of absolute address of file
-     * @return 
+     * Resolves URL of absolute address of file, taken from: <a href='https://docs.oracle.com/javase/tutorial/jaxp/sax/parsing.html'>Java SAX Documentation</a>
+     * @return resolved URL String
      */
     
     public static String convertToFileURL() {

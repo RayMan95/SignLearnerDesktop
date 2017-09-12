@@ -6,6 +6,7 @@
 package models;
 
 import java.util.ArrayList;
+import java.util.Objects;
 
 /**
  * Class representing the Lesson object in the SignLearner tool
@@ -17,14 +18,25 @@ public class Lesson {
     ArrayList<LessonActivity> lessonActivities;
     LessonActivity currActivity;
     
+    /**
+     * Only constructor
+     * @param title Title of lesson
+     * @param id ID of lesson
+     * @param cat Category of lesson
+     */
     public Lesson(String title, String id, String cat){
         TITLE = title;
         ID = id;
         CATEGORY = cat;
     }
     
+    // Getters and setters
+    
     public void setActivities(ArrayList<LessonActivity> activities){
-        lessonActivities = activities;
+        lessonActivities = new ArrayList<>();
+        for (LessonActivity la : activities){
+            lessonActivities.add(la);
+        }
     }
     
     public String[] getAllActivityAttributes(){
@@ -43,9 +55,31 @@ public class Lesson {
         return CATEGORY;
     }
     
+    // Utility methods
+    
     @Override
-    public String toString(){
-        return TITLE + " " + ID + " " + CATEGORY;
+    public boolean equals(Object other){
+        if (!(other instanceof Lesson)){
+            return false;
+        }
+        Lesson l = (Lesson)other;
+        if(!l.CATEGORY.equals(CATEGORY)) return false;
+        else if (!l.ID.equals(ID)) return false;
+        else if (!l.TITLE.equals(TITLE)) return false;
+            
+        return true;
     }
     
+    @Override
+    public String toString(){
+        String details = ID + ") " + TITLE + " [" + CATEGORY + "]";
+        if(lessonActivities != null){
+            for (LessonActivity LA : lessonActivities){
+                details += "\n";
+                details += "    ";
+                details += LA.toString();
+            }
+        }
+        return details;
+    }
 }
