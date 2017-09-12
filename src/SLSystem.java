@@ -37,7 +37,7 @@ public class SLSystem {
     
     public Lesson getLesson(String lessonID){
         Lesson lesson = currLessonList.getLesson(lessonID);
-            if(lesson != null){ 
+        if(lesson != null){ 
             currLesson = lesson;
             currActivity = lesson.getActivity(0);
         }

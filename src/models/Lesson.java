@@ -46,15 +46,21 @@ public class Lesson {
     
     public LessonActivity getNext(){
         LessonActivity activity = null;
-        ++index;
-        if (hasNext()) activity = lessonActivities.get(index);
+        
+        if (hasNext()){ 
+            ++index;
+            activity = lessonActivities.get(index);
+        }
         return activity;
     }
     
     public LessonActivity getPrevious(){
         LessonActivity activity = null;
-        --index;
-        if (hasPrevious()) activity = lessonActivities.get(index);
+        
+        if (hasPrevious()){ 
+            --index;
+            activity = lessonActivities.get(index);
+        }
         return activity;
     }
     

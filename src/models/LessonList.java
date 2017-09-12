@@ -28,9 +28,9 @@ public class LessonList {
         }
     }
     
-    public Lesson getLesson(String lesson_title){
+    public Lesson getLesson(String lesson_id){
         for (Lesson L : allLessons){
-            if (L.getTitle().equals(lesson_title)) return L;
+            if (L.getID().equals(lesson_id)) return L;
         }
         return null;
     }
