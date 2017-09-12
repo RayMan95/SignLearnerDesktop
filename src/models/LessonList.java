@@ -9,7 +9,7 @@ import java.util.ArrayList;
 
 /**
  * Class representing the LessonList object in the SignLearner tool
- * @author  Luveshen Pillay, Christopher Mudongo, Rayaan Fakier
+ * @author Rayaan Fakier
  * @date 2017-09-05
  */
 public class LessonList {

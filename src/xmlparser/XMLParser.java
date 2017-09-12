@@ -5,15 +5,10 @@
  */
 package xmlparser;
 import models.*;
-import javax.xml.parsers.*;
 import org.xml.sax.*;
 import org.xml.sax.helpers.*;
 
 import java.util.*;
-import java.io.*;
-import java.net.MalformedURLException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 /**
  * Class containing functionality for building course structures by parsing XML

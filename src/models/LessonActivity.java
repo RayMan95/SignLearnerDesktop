@@ -7,7 +7,7 @@ package models;
 
 /**
  * Class representing the LessonActivity object in the SignLearner tool
- * @author  Luveshen Pillay, Christopher Mudongo, Rayaan Fakier
+ * @author Rayaan Fakier
  * @date 2017-09-05
  */
 public class LessonActivity {
