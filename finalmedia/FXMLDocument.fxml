@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.media.*?>
+<?import com.jfoenix.controls.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane fx:id="borderPane" minHeight="40.0" minWidth="30.0" prefHeight="40.0" prefWidth="30.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="finalmedia.FXMLDocumentController">
+   <top>
+      <Group>
+         <children>
+            <MediaView id="mediaView" fx:id="mediaView" fitHeight="200.0" fitWidth="200.0" focusTraversable="true" preserveRatio="false">
+               <viewport>
+                  <Rectangle2D />
+               </viewport>
+            </MediaView>
+         </children>
+      </Group>
+   </top>
+   <bottom>
+      <VBox fx:id="controlBox" alignment="BOTTOM_CENTER" prefHeight="399.0" prefWidth="599.0" BorderPane.alignment="CENTER">
+         <children>
+            <JFXSlider fx:id="timeSlider" minHeight="-Infinity" style="-fx-background-color: #fffffff;" />
+            <HBox alignment="CENTER" focusTraversable="true" prefHeight="50.0" style="-fx-background-color: #00FFFFFF;">
+               <children>
+                  <JFXButton id="playButton" fx:id="playPauseButton" onAction="#playpauseVideo" prefHeight="30.0" prefWidth="30.0" />
+                  <JFXButton id="stopButton" fx:id="stopButton" onAction="#stopVideo" prefHeight="30.0" prefWidth="30.0" />
+                  <JFXButton id="rewindx2Button" fx:id="slowerVIdeo" onAction="#slowerVideo" prefHeight="30.0" prefWidth="30.0" />
+                  <JFXButton id="rewindx1Button" fx:id="slowVideo" onAction="#slowVideo" prefHeight="30.0" prefWidth="30.0" />
+                  <JFXButton id="fastForwardx2Button" fx:id="fasterVideo" onAction="#fasterVideo" prefHeight="30.0" prefWidth="30.0" />
+                  <JFXButton id="fastForwardx2Button" onAction="#fasterVideo" prefHeight="30.0" prefWidth="30.0" />
+                  <Separator opacity="0.0" prefWidth="30.0" />
+                  <Label fx:id="playTime" text="playTime" textFill="WHITE" />
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </bottom>
+</BorderPane>

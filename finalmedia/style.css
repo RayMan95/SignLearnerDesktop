@@ -1,0 +1,48 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Sep 5, 2017, 7:16:19 PM
+    Author     : Luveshen
+*/
+.button{
+    -fx-background-image: url("Icons/FF1.png");
+    -fx-background-size: 30 30;
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: center;
+     
+}
+
+.pause-button{
+    -fx-background-image: url("Icons/pause.png");
+}
+
+#startButton{
+    -fx-background-image: url("Icons/on.png");
+}
+
+#playButton{
+    -fx-background-image: url("Icons/pause.png");
+}
+
+#stopButton{
+    -fx-background-image: url("Icons/Stop.png");
+}
+
+#rewindx2Button{
+    -fx-background-image: url("Icons/RW2.png");
+}
+
+#rewindx1Button{
+    -fx-background-image: url("Icons/RW1.png");
+}
+
+#fastForwardx1Button{
+    -fx-background-image: url("Icons/FF1.png");
+}
+
+#fastForwardx2Button{
+    -fx-background-image: url("Icons/FF2.png");
+}
