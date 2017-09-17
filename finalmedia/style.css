@@ -14,6 +14,14 @@ and open the template in the editor.
     -fx-background-position: center;
      
 }
+.button:hover{
+    -fx-background-color: #FF8C00;
+}
+
+.label{
+    -fx-font-weight:bold;
+}
+
 
 .pause-button{
     -fx-background-image: url("Icons/pause.png");

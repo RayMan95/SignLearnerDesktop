@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.text.*?>
 <?import javafx.geometry.*?>
 <?import javafx.scene.media.*?>
 <?import com.jfoenix.controls.*?>
@@ -25,16 +26,24 @@
       <VBox fx:id="controlBox" alignment="BOTTOM_CENTER" prefHeight="399.0" prefWidth="599.0" BorderPane.alignment="CENTER">
          <children>
             <JFXSlider fx:id="timeSlider" minHeight="-Infinity" style="-fx-background-color: #fffffff;" />
-            <HBox alignment="CENTER" focusTraversable="true" prefHeight="50.0" style="-fx-background-color: #00FFFFFF;">
+            <HBox alignment="CENTER" focusTraversable="true" minHeight="-Infinity" prefHeight="50.0" style="-fx-background-color: #00FFFFFF;">
                <children>
-                  <JFXButton id="playButton" fx:id="playPauseButton" onAction="#playpauseVideo" prefHeight="30.0" prefWidth="30.0" />
-                  <JFXButton id="stopButton" fx:id="stopButton" onAction="#stopVideo" prefHeight="30.0" prefWidth="30.0" />
-                  <JFXButton id="rewindx2Button" fx:id="slowerVIdeo" onAction="#slowerVideo" prefHeight="30.0" prefWidth="30.0" />
-                  <JFXButton id="rewindx1Button" fx:id="slowVideo" onAction="#slowVideo" prefHeight="30.0" prefWidth="30.0" />
-                  <JFXButton id="fastForwardx2Button" fx:id="fasterVideo" onAction="#fasterVideo" prefHeight="30.0" prefWidth="30.0" />
-                  <JFXButton id="fastForwardx2Button" onAction="#fasterVideo" prefHeight="30.0" prefWidth="30.0" />
-                  <Separator opacity="0.0" prefWidth="30.0" />
-                  <Label fx:id="playTime" text="playTime" textFill="WHITE" />
+                  <JFXButton id="playButton" fx:id="playPauseButton" minHeight="-Infinity" minWidth="-Infinity" onAction="#playpauseVideo" prefHeight="30.0" prefWidth="30.0" />
+                  <JFXButton id="stopButton" fx:id="stopButton" minHeight="-Infinity" minWidth="-Infinity" onAction="#stopVideo" prefHeight="30.0" prefWidth="30.0" />
+                  <JFXButton id="rewindx2Button" fx:id="slowerVIdeo" minHeight="-Infinity" minWidth="-Infinity" onAction="#slowerVideo" prefHeight="30.0" prefWidth="30.0" />
+                  <JFXButton id="rewindx1Button" fx:id="slowVideo" minHeight="-Infinity" minWidth="-Infinity" onAction="#slowVideo" prefHeight="30.0" prefWidth="30.0" />
+                  <JFXButton id="fastForwardx2Button" fx:id="fasterVideo" minHeight="-Infinity" minWidth="-Infinity" onAction="#fasterVideo" prefHeight="30.0" prefWidth="30.0" />
+                  <JFXButton id="fastForwardx2Button" minHeight="-Infinity" minWidth="-Infinity" onAction="#fasterVideo" prefHeight="30.0" prefWidth="30.0" />
+                  <Label fx:id="playTime" depthTest="ENABLE" text="playTime" textFill="WHITE">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                     <HBox.margin>
+                        <Insets left="10.0" />
+                     </HBox.margin></Label>
                </children>
             </HBox>
          </children>

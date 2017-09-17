@@ -53,6 +53,8 @@ public class FXMLDocumentController implements Initializable {
     private JFXSlider timeSlider ;
     @FXML
     private Label playTime;
+   
+    
     
 
     /**
@@ -179,17 +181,7 @@ public class FXMLDocumentController implements Initializable {
             });
         }
     }
-    
-   /* private StringConverter indicatorFormat(){
-        public String toString(Double d){
-            return "HELLO";
-        }
-        
-    }*/
-    
-    
-    
-    
+
     private String formatTime(Duration elapsed, Duration duration) {
             int intElapsed = (int)Math.floor(elapsed.toSeconds());
             int elapsedHours = intElapsed / (60 * 60);
@@ -227,11 +219,15 @@ public class FXMLDocumentController implements Initializable {
                 }
             }
         }
+        
+    private String formatSliderTime(Duration elapsed,Duration duration){
+        return formatTime(elapsed,duration).split("/")[0];
+    }
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
          //C:/Users/Documents/Player/src/SampleVideo_1280x720_10mb.mp4"
-        Media media = new Media("file:///filepathHERE");
+        Media media = new Media("file:///filePathHere");
         mediaPlayer = new MediaPlayer(media);
         mediaView.setMediaPlayer(mediaPlayer);
         //NB change size PRIOR to displaying +> here is where we decide intial display value 
@@ -248,7 +244,7 @@ public class FXMLDocumentController implements Initializable {
         
         mediaPlayer.play();
         playSpeed = 1;
-        // CODE works till this point
+     
         
         mediaPlayer.currentTimeProperty().addListener((ObservableValue<? extends Duration> observable, Duration oldValue, Duration newValue) -> {
             updateValues();
@@ -267,8 +263,14 @@ public class FXMLDocumentController implements Initializable {
                     mediaPlayer.seek(duration.multiply(timeSlider.getValue() / 100.0));
                     System.out.println("SEEKE");
                 }
+                Duration currentTime = mediaPlayer.getCurrentTime();
+                 timeSlider.setValueFactory(slider ->
+	  		Bindings.createStringBinding(
+	  			() -> (formatSliderTime(currentTime, duration)),
+	  			slider.valueProperty()
+	  		)
+                 );
                 updateValues();
-                System.out.println("B");
                 
             }
         });
