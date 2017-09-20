@@ -5,13 +5,12 @@
  */
 package signlearner;
 
+
 import java.io.IOException;
-import java.lang.reflect.Array;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
-import java.util.Map;
 import java.util.ResourceBundle;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -26,9 +25,8 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
 import javafx.stage.Stage;
 import java.util.Random;
-import javafx.beans.value.ChangeListener;
-import javafx.beans.value.ObservableValue;
-import javafx.event.EventType;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
 
 /**
  * FXML Controller class
@@ -42,6 +40,8 @@ public class LessonsViewController implements Initializable {
      */
     @FXML
     private ListView<String> lessonView;
+    @FXML
+    private Button play;
     @FXML
     private Button home;
     @FXML
@@ -71,12 +71,6 @@ public class LessonsViewController implements Initializable {
         lessonView.setItems(data);
         //lessonDetail.setItems(generateIntList());
         
-        //LOGIC--> Trying to add a a listner to the listview object, so as to build the 
-        //media player scene once item on the list is invoked by mouse click.
-        //selection listerner on item
-        lessonDetail.getSelectionModel().selectedItemProperty().addListener((v,x,s)-> {
-            System.out.println(s);
-        });
         
     } 
     
@@ -101,6 +95,7 @@ public class LessonsViewController implements Initializable {
     
     //tester method to generate list to populate list view...
     //TO BE REPLACED ONCE INTEGRATION OF COMPONENTS TAKES PLACE
+    //used as a place-holder for values in the list view component.
     public ObservableList<Integer> generateIntList(){
         Random random = new Random();
         ObservableList<Integer> data = FXCollections.observableArrayList();
@@ -111,17 +106,42 @@ public class LessonsViewController implements Initializable {
         return data;
     }
     
-    
+    /**
+     * play button selecting to play the selected task from the lesson detail listview
+     * @param event
+     * @param object
+     * @throws IOException 
+     */
     @FXML
-    public void lessonSelected(ActionEvent event) throws IOException{
-        
-        //build video player scene view scene
-        Parent root = FXMLLoader.load(getClass().getResource("LessonPlayerView.fxml"));
-        Scene scene = new Scene(root);
-        Stage app_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        app_stage.setScene(scene);
-        app_stage.show(); 
+    public void playTask(ActionEvent event) throws IOException{
+        //if no task video has been selected, an alert pop up for the user
+        if((lessonDetail.getSelectionModel().selectedItemProperty().getValue()) == null){
+            
+            Alert alert = new Alert(AlertType.WARNING);
+            alert.setTitle("Warning Dialog");
+            //alert.setHeaderText("Warning Dialog");
+            alert.setContentText("Please select a task to play");
+
+            alert.showAndWait();
+            
+        }
+        else{
+            //System.out.println("Now playing video"+lessonDetail.getSelectionModel().selectedItemProperty().getValue());
+            //lessonDetail.getSelectionModel().clearSelection();
+            Parent root = FXMLLoader.load(getClass().getResource("LessonPlayerView.fxml"));
+            Scene scene = new Scene(root);
+            Stage app_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            app_stage.setScene(scene);
+            app_stage.show(); 
+            
+        }
     }
+    
+    /**
+     * @clickHome --> navigates the user back to the main menu screen(stage)
+     * @param event
+     * @throws IOException 
+     */
     @FXML
     public void clickHome(ActionEvent event) throws IOException{
         //build main view scene

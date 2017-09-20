@@ -38,6 +38,7 @@ public class LessonPlayerViewController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
     } 
+    
     @FXML
     public void clickHome(ActionEvent event) throws IOException{
         //build main view scene

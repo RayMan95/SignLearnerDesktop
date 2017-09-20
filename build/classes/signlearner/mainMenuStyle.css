@@ -22,14 +22,14 @@ and open the template in the editor.
     -fx-font-weight: bold;
     -fx-background-color: #2196f3;
     -fx-background-radius: 22;
-    -fx-font-size: 16;
+    -fx-font-size: 14;
     -fx-text-fill: white;
 }
 .homeButton:hover{
     -fx-font-weight: bold;
     -fx-background-color: white;
     -fx-background-radius: 22;
-    -fx-font-size: 16;
+    -fx-font-size: 14;
     -fx-text-fill: #2196f3;
     -fx-border-color: #2196f3;
     -fx-border-radius: 20;
@@ -40,7 +40,7 @@ and open the template in the editor.
     -fx-font-weight: bold;
     -fx-background-color: white;
     -fx-background-radius: 22;
-    -fx-font-size: 16;
+    -fx-font-size: 14;
     -fx-text-fill: #2196f3;
     -fx-border-color: #2196f3;
     -fx-border-radius: 20;
@@ -52,7 +52,7 @@ and open the template in the editor.
     -fx-font-weight: bold;
     -fx-background-color: #2196f3;
     -fx-background-radius: 22;
-    -fx-font-size: 16;
+    -fx-font-size: 14;
     -fx-text-fill: white;   
 }
 
@@ -60,7 +60,7 @@ and open the template in the editor.
     -fx-font-weight: bold;
     -fx-background-color: white;
     -fx-background-radius: 22;
-    -fx-font-size: 16;
+    -fx-font-size: 14;
     -fx-text-fill: #2196f3;
     -fx-border-color: #2196f3;
     -fx-border-radius: 20;
@@ -71,7 +71,7 @@ and open the template in the editor.
     -fx-font-weight: bold;
     -fx-background-color: white;
     -fx-background-radius: 22;
-    -fx-font-size: 16;
+    -fx-font-size: 14;
     -fx-text-fill: #2196f3;
     -fx-border-color: #2196f3;
     -fx-border-radius: 20;
@@ -83,7 +83,7 @@ and open the template in the editor.
     -fx-font-weight: bold;
     -fx-background-color: #ff4d4d;
     -fx-background-radius: 22;
-    -fx-font-size: 16;
+    -fx-font-size: 14;
     -fx-text-fill: white;   
 }
 
@@ -91,7 +91,7 @@ and open the template in the editor.
     -fx-font-weight: bold;
     -fx-background-color: white;
     -fx-background-radius: 22;
-    -fx-font-size: 16;
+    -fx-font-size: 14;
     -fx-text-fill: #ff4d4d;
     -fx-border-color: #ff4d4d;
     -fx-border-radius: 20;
@@ -102,7 +102,7 @@ and open the template in the editor.
     -fx-font-weight: bold;
     -fx-background-color: white;
     -fx-background-radius: 22;
-    -fx-font-size: 16;
+    -fx-font-size: 14;
     -fx-text-fill: #ff4d4d;
     -fx-border-color: #ff4d4d;
     -fx-border-radius: 20;
@@ -112,4 +112,53 @@ and open the template in the editor.
 
 .lessonView{
     -fx-background-color: #cce6ff;
+}
+
+.returnLessonButton {
+    -fx-font-weight: bold;
+    -fx-background-color: #2196f3;
+    -fx-background-radius: 22;
+    -fx-font-size: 14;
+    -fx-text-fill: white;
+}
+.returnLessonButton:hover{
+    -fx-font-weight: bold;
+    -fx-background-color: white;
+    -fx-background-radius: 22;
+    -fx-font-size: 14;
+    -fx-text-fill: #2196f3;
+    -fx-border-color: #2196f3;
+    -fx-border-radius: 20;
+    -fx-border-width: 3;
+}
+
+.returnLessonButton:pressed{
+    -fx-font-weight: bold;
+    -fx-background-color: white;
+    -fx-background-radius: 22;
+    -fx-font-size: 14;
+    -fx-text-fill: #2196f3;
+    -fx-border-color: #2196f3;
+    -fx-border-radius: 20;
+    -fx-border-width: 3;
+    -fx-rotate: 5;
+}
+
+.play{
+    -fx-font-weight: bold;
+    -fx-background-color:yellowgreen;
+    -fx-background-radius: 22;
+    -fx-font-size: 14;
+    -fx-text-fill: white;
+}
+
+.play:hover{
+    -fx-font-weight: bold;
+    -fx-background-color: white;
+    -fx-background-radius: 22;
+    -fx-font-size: 14;
+    -fx-text-fill: yellowgreen;
+    -fx-border-color: yellowgreen;
+    -fx-border-radius: 20;
+    -fx-border-width: 3;
 }

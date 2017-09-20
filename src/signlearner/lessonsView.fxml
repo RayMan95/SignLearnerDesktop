@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ListView?>
 <?import javafx.scene.control.SplitPane?>
@@ -30,7 +31,20 @@
       </HBox>
    </top>
    <bottom>
-      <HBox prefHeight="48.0" prefWidth="600.0" styleClass="bottom_Top_Panel" stylesheets="@mainMenuStyle.css" BorderPane.alignment="CENTER" />
+      <HBox alignment="CENTER_RIGHT" prefHeight="48.0" prefWidth="600.0" styleClass="bottom_Top_Panel" stylesheets="@mainMenuStyle.css" BorderPane.alignment="CENTER">
+         <children>
+            <Button fx:id="play" mnemonicParsing="false" onAction="#playTask" styleClass="play" stylesheets="@mainMenuStyle.css" text="Play task">
+               <HBox.margin>
+                  <Insets right="150.0" />
+               </HBox.margin>
+               <cursor>
+                  <Cursor fx:constant="CLOSED_HAND" />
+               </cursor>
+            </Button>
+         </children>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets></HBox>
    </bottom>
    <center>
       <SplitPane dividerPositions="0.47491638795986624" prefHeight="160.0" prefWidth="200.0" BorderPane.alignment="CENTER">

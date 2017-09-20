@@ -9,9 +9,9 @@
 
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="signlearner.LessonPlayerViewController">
    <top>
-      <HBox prefHeight="66.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+      <HBox prefHeight="56.0" prefWidth="600.0" styleClass="bottom_Top_Panel" stylesheets="@mainMenuStyle.css" BorderPane.alignment="CENTER">
          <children>
-            <Button fx:id="home" mnemonicParsing="false" onDragDetected="#clickHome" text="HOME">
+            <Button fx:id="home" mnemonicParsing="false" onAction="#clickHome" prefHeight="20.0" prefWidth="74.0" styleClass="homeButton" stylesheets="@mainMenuStyle.css" text="HOME">
                <HBox.margin>
                   <Insets left="10.0" top="5.0" />
                </HBox.margin>
@@ -25,11 +25,11 @@
       </HBox>
    </top>
    <bottom>
-      <HBox prefHeight="55.0" prefWidth="161.0" BorderPane.alignment="CENTER">
+      <HBox prefHeight="40.0" prefWidth="600.0" styleClass="bottom_Top_Panel" stylesheets="@mainMenuStyle.css" BorderPane.alignment="CENTER">
          <children>
-            <Button fx:id="lessons" mnemonicParsing="false" onAction="#clickLessons" text="Ruturn to Lessons">
+            <Button fx:id="lessons" mnemonicParsing="false" onAction="#clickLessons" prefHeight="10.0" prefWidth="150.0" styleClass="returnLessonButton" stylesheets="@mainMenuStyle.css" text="Ruturn to Lessons">
                <HBox.margin>
-                  <Insets left="10.0" top="10.0" />
+                  <Insets left="10.0" top="6.0" />
                </HBox.margin>
             </Button>
          </children>
