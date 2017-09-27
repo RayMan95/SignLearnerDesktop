@@ -1,18 +1,7 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import javafx.application.Application;
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
-import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.parsers.SAXParser;
@@ -23,12 +12,13 @@ import org.xml.sax.SAXException;
 import org.xml.sax.XMLReader;
 
 /**
- *
- * @author Ray
+ * 
+ * @author  Luveshen Pillay, Christopher Mudongo, Rayaan Fakier
+ * @date 2017-09-05
  */
 public class FXMainTest extends Application {
     
-    private final static String FILE_NAME = "../icdl/xml/e learner self study.xml"; // start pos: SignLearnerDesktop/dist
+    private final static String FILE_NAME = "./res/xml/e learner self study.xml";
     
     @Override
     public void start(Stage primaryStage) {
@@ -51,8 +41,8 @@ public class FXMainTest extends Application {
         xmlReader.setContentHandler(xmlp);
         xmlReader.parse(convertToFileURL());
         
-        ArrayList<LessonList> units = xmlp.getUnits(); // fully built-up units
-        
+        ArrayList<Course> courses = xmlp.getCourses(); // fully built-up courses
+        System.out.println(courses.get(0).toString());
         System.exit(0);
     }
 

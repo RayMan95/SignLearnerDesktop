@@ -10,8 +10,9 @@ import java.util.Objects;
  */
 public class Lesson {
     private final String TITLE, ID, CATEGORY;
-    ArrayList<LessonActivity> lessonActivities;
-    LessonActivity currActivity;
+    private ArrayList<LessonActivity> ACTIVITIES;
+    private LessonActivity currActivity; // ?
+    private int INDEX = 0;
     
     /**
      * Only constructor
@@ -28,13 +29,14 @@ public class Lesson {
     // Getters and setters
     
     public void setActivities(ArrayList<LessonActivity> activities){
-        lessonActivities = new ArrayList<>();
-        for (LessonActivity la : activities){
-            lessonActivities.add(la);
-        }
+        ACTIVITIES = new ArrayList<>();
+        ACTIVITIES.addAll(activities);
     }
     
-    public String[] getAllActivityAttributes(){
+    public LessonActivity getLessonActivity(String activityID){
+        for (LessonActivity LA : ACTIVITIES){
+            if (LA.getScreenID().equals(activityID)) return LA;
+        }
         return null;
     }
     
@@ -52,6 +54,26 @@ public class Lesson {
     
     // Utility methods
     
+    public boolean hasNext(){
+        return (INDEX < (ACTIVITIES.size()-1));
+    }
+    
+    public LessonActivity next(){
+        if (!hasNext()) return null;
+        ++INDEX;
+        return ACTIVITIES.get(INDEX);
+    }
+    
+    public boolean hasPrevious(){
+        return (INDEX  > 0);
+    }
+    
+    public LessonActivity previous(){
+        if (!hasPrevious()) return null;
+        --INDEX;
+        return ACTIVITIES.get(INDEX);
+    }
+    
     @Override
     public boolean equals(Object other){
         if (!(other instanceof Lesson)){
@@ -67,11 +89,11 @@ public class Lesson {
     
     @Override
     public String toString(){
-        String details = ID + ") " + TITLE + " [" + CATEGORY + "]";
-        if(lessonActivities != null){
-            for (LessonActivity LA : lessonActivities){
+        String details = "Lesson: " + ID + ") " + TITLE + " [" + CATEGORY + "]";
+        if(ACTIVITIES != null){
+            for (LessonActivity LA : ACTIVITIES){
                 details += "\n";
-                details += "    ";
+                details += "      ";
                 details += LA.toString();
             }
         }

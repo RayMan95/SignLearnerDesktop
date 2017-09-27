@@ -1,0 +1,290 @@
+<?xml version="1.0" encoding="utf-8"?>
+<course xmlns="http://www.w3.org/2005/Atom" course_id="01" course_title="e learner self study">
+	<unit unit_title="Word Processing " unit_id="02">
+		<lesson lesson_title="O1: Getting to know your computer" lesson_id="01" lesson_type="O">
+		</lesson>
+		<lesson lesson_title="O2: Hardware hunt" lesson_id="02" lesson_type="O">
+		</lesson>
+		<lesson lesson_title="O3: Our Computerized world" lesson_id="03" lesson_type="O">
+		</lesson>
+		<lesson lesson_title="O4: Special Keys" lesson_id="05" lesson_type="O">
+		</lesson>
+		<lesson lesson_title="E6: Files and Media" lesson_id="05" lesson_type="E">
+		</lesson>
+		<lesson lesson_title="S3:Our Organization" lesson_id="06" lesson_type="S">
+			<screen>
+				<screenID>lesson_description_1</screenID>
+				<video>/video/Introduction.mp4</video>
+				<vid_caption>Introduction</vid_caption>
+			</screen>
+			<screen>
+				<screenID>lesson_description_2</screenID>
+				<video>/video/What is an organization.mp4</video>
+				<vid_caption>What is an organization</vid_caption>
+			</screen>
+			<screen>
+				<screenID>lesson_description_3</screenID>
+				<video>/video/How are organizations the same.mp4</video>
+				<vid_caption>How are organizations the same</vid_caption>
+			</screen>
+			<screen>
+				<screenID>lesson_description_4</screenID>
+				<video>/video/Roles and responsibility.mp4</video>
+				<vid_caption>Roles and responsibility</vid_caption>
+			</screen>
+			<screen>
+				<screenID>lesson_description_5</screenID>
+				<video>/video/Organization structure.mp4</video>
+				<vid_caption>Organization structure</vid_caption>
+			</screen>
+			<screen>
+				<screenID>lesson_description_6</screenID>
+				<video>/video/DCCT structure.mp4</video>
+				<vid_caption>DCCT structure</vid_caption>
+			</screen>
+			<screen>
+				<screenID>lesson_description_7</screenID>
+				<video>/video/DCCT hierarchy.mp4</video>
+				<vid_caption>DCCT hierarchy</vid_caption>
+			</screen>
+			<screen>
+				<screenID>task_description2</screenID>
+				<video>/video/Task description.mp4</video>
+				<vid_caption>Task description</vid_caption>	
+			</screen>
+			<screen>
+				<screenID>step_1</screenID>
+				<video>/video/Task 1 - look for e-learner icon.mp4</video>
+				<vid_caption>Task 1 - look for e-learner icon</vid_caption>
+				<image>/shared_images/e-learner.png</image>
+			</screen>
+			<screen>
+				<screenID>step_2</screenID>
+				<video>/video/Task 2 - Categories (O, E , S).mp4</video>
+				<vid_caption>Task 2 - Categories (O, E , S)</vid_caption>
+			</screen>
+			<screen>
+				<screenID>step_3</screenID>
+				<video>/video/Task 3 - choose S3 our company.mp4</video>
+				<vid_caption>Task 3 - choose S3 our company</vid_caption>
+			</screen>
+			<screen>
+				<screenID>step_4</screenID>
+				<video>/video/Task 4 - Password.mp4</video>
+				<vid_caption>Task 4 - Password</vid_caption>
+			</screen>
+			<screen>
+				<screenID>step_5</screenID>
+				<video>/video/Task 5 - Open Word.mp4</video>
+				<vid_caption>Task 5 - Open Word</vid_caption>
+				<image>/shared_images/word_icon.png</image>
+			</screen>
+			<screen>
+				<screenID>step_6</screenID>
+				<video>/video/Task 6 - How to open MS Word.mp4</video>
+				<vid_caption>Task 6 - How to open MS Word</vid_caption>
+			</screen>
+			<screen>
+				<screenID>step_7</screenID>
+				<video>/video/Task 7 - New document.mp4</video>
+				<vid_caption>Task 7 - New document</vid_caption>
+			</screen>
+			<screen>
+				<screenID>step_8</screenID>
+				<video>/video/Task 8 - Save document.mp4</video>
+				<vid_caption>Task 8 - Save document</vid_caption>
+			</screen>
+			<screen>
+				<screenID>step_9</screenID>
+				<video>/video/Task 9 - Insert heading.mp4</video>
+				<vid_caption>Task 9 - Insert heading</vid_caption>
+			</screen>
+			<screen>
+				<screenID>step_10</screenID>
+				<video>/video/Task 10 - Look for WordArt.mp4</video>
+				<vid_caption>Task 10 - Look for WordArt</vid_caption>
+				<image>/shared_images/WordArt_icon.png</image>
+			</screen>
+			<screen>
+				<screenID>step_11</screenID>
+				<video>/video/Task 11 - choose wordArt.mp4</video>
+				<vid_caption>Task 11 - choose wordArt</vid_caption>
+			</screen>
+			<screen>
+				<screenID>step_12</screenID>
+				<video>/video/Task 12 - Type your heading.mp4</video>
+				<vid_caption>Task 12 - Type your heading</vid_caption>
+			</screen>
+			<screen>
+				<screenID>step_13</screenID>
+				<video>/video/Task 13 - Type my organization.mp4</video>
+				<vid_caption>Task 13 - Type my organization</vid_caption>
+			</screen>
+			<screen>
+				<screenID>step_14</screenID>
+				<video>/video/Task 14 - change wordArt design.mp4</video>
+				<vid_caption>Task 14 - change wordArt design</vid_caption>
+			</screen>
+			<screen>
+				<screenID>step_15</screenID>
+				<video>/video/Task 15 - Press Ok to confirm selection.mp4</video>
+				<vid_caption>Task 15 - Press Ok to confirm selection</vid_caption>
+			</screen>
+			<screen>
+				<screenID>step_16</screenID>
+				<video>/video/Task 16 - Adding 3D.mp4</video>
+				<vid_caption>Task 16 - Adding 3D</vid_caption>
+			</screen>
+			<screen>
+				<screenID>step_17</screenID>
+				<video>/video/Task 17 - Locating 3D on toolbar.mp4</video>
+				<vid_caption>Task 17 - Locating 3D on toolbar</vid_caption>
+			</screen>
+			<screen>
+				<screenID>step_18</screenID>
+				<video>/video/Task 18 - Choose 3D.mp4</video>
+				<vid_caption>Task 18 - Choose 3D</vid_caption>
+			</screen>
+			<screen>
+				<screenID>step_19</screenID>
+				<video>/video/Task 19 - Text wrapping.mp4</video>
+				<vid_caption>Task 19 - Text wrapping</vid_caption>
+			</screen>
+			<screen>
+				<screenID>step_20</screenID>
+				<video>/video/Task 20 - Locate smartArt.mp4</video>
+				<vid_caption>Task 20 - Locate smartArt</vid_caption>
+				<image>/shared_images/Insert_smartArt.png</image>
+			</screen>
+			<screen>
+				<screenID>step_21</screenID>
+				<video>/video/Task 21 - move cursor to position.mp4</video>
+				<vid_caption>Task 21 - move cursor to position</vid_caption>
+			</screen>
+			<screen>
+				<screenID>step_22</screenID>
+				<video>/video/Task 22 - Insert smartArt.mp4</video>
+				<vid_caption>Task 22 - Insert smartArt</vid_caption>
+				<image>/shared_images/smartArt_hierarchy.png</image>
+			</screen>
+			<screen>
+				<screenID>step_23</screenID>
+				<video>/video/Task 23 - choose organization chart.mp4</video>
+				<vid_caption>Task 23 - choose organization chart</vid_caption>
+			</screen>
+			<screen>
+				<screenID>step_24</screenID>
+				<video>/video/Task 24 - smartArt text wrapping.mp4</video>
+				<vid_caption>Task 24 - smartArt text wrapping</vid_caption>
+				<image>/shared_images/smartArt_ToolBox.png</image>
+			</screen>
+			<screen>
+				<screenID>step_25</screenID>
+				<video>/video/Task 25 - Move smartArt.mp4</video>
+				<vid_caption>Task 25 - Move smartArt</vid_caption>
+			</screen>
+			<screen>
+				<screenID>step_26</screenID>
+				<video>/video/Task 26 - Fill in organization chart.mp4</video>
+				<vid_caption>Task 26 - Fill in organization chart</vid_caption>
+			</screen>
+			<screen>
+				<screenID>step_27</screenID>
+				<video>/video/Task 27 - Add new box.mp4</video>
+				<vid_caption>Task 27 - Add new box</vid_caption>
+				<image>/shared_images/addShape_dropdown.png</image>
+			</screen>
+			<screen>
+				<screenID>step_28</screenID>
+				<video>/video/Task 28 - Adding more boxes.mp4</video>
+				<vid_caption>Task 28 - Adding more boxes</vid_caption>
+			</screen>
+			<screen>
+				<screenID>step_29</screenID>
+				<video>/video/Task 29 - Add all jobs to chart.mp4</video>
+				<vid_caption>Task 29 - Add all jobs to chart</vid_caption>
+			</screen>
+			<screen>
+				<screenID>step_30</screenID>
+				<video>/video/Task 30 - How to move boxes.mp4</video>
+				<vid_caption>Task 30 - How to move boxes</vid_caption>
+			</screen>
+			<screen>
+				<screenID>step_31</screenID>
+				<video>/video/Task 31 - Moving boxes.mp4</video>
+				<vid_caption>Task 31 - Moving boxes</vid_caption>
+			</screen>
+			<screen>
+				<screenID>step_32</screenID>
+				<video>/video/Task 32 - Matching DCCT structure.mp4</video>
+				<vid_caption>Task 32 - Matching DCCT structure</vid_caption>
+			</screen>
+			<screen>
+				<screenID>step_33</screenID>
+				<video>/video/Task 33 -  Change colour.mp4</video>
+				<vid_caption>Task 33 -  Change colour</vid_caption>
+				<image>/shared_images/smartArt_designToolbar.png</image>
+			</screen>
+			<screen>
+				<screenID>step_34</screenID>
+				<video>/video/Task 34 - Type name and date.mp4</video>
+				<vid_caption>Task 34 - Type name and date</vid_caption>
+			</screen>
+			<screen>
+				<screenID>step_35</screenID>
+				<video>/video/Task 35 - Save document.mp4</video>
+				<vid_caption>Task 35 - Save document</vid_caption>
+				<image>/shared_images/quickAccessRibbon_save.png</image>
+			</screen>
+			<screen>
+				<screenID>step_36</screenID>
+				<video>/video/Task 36 - Print preview.mp4</video>
+				<vid_caption>Task 36 - Print preview</vid_caption>
+			</screen>
+			<screen>
+				<screenID>step_37</screenID>
+				<video>/video/Task 37 - Opening print preview.mp4</video>
+				<vid_caption>Task 37 - Opening print preview</vid_caption>
+				<image>/shared_images/print_preview.png</image>
+			</screen>
+			<screen>
+				<screenID>step_38</screenID>
+				<video>/video/Task 38 - Close print preview.mp4</video>
+				<vid_caption>Task 38 - Close print preview</vid_caption>
+				<image>/shared_images/close_printPreview.png</image>
+			</screen>
+			<screen>
+				<screenID>step_39</screenID>
+				<video>/video/Task 39 - Opening print.mp4</video>
+				<vid_caption>Task 39 - Opening print</vid_caption>
+			</screen>
+			<screen>
+				<screenID>step_40</screenID>
+				<video>/video/Task 40 - Print dialog box.mp4</video>
+				<vid_caption>Task 40 - Print dialog box</vid_caption>
+			</screen>
+			<screen>
+				<screenID>step_41</screenID>
+				<video>/video/Task 41 - Save check.mp4</video>
+				<vid_caption>Task 41 - Save check</vid_caption>
+			</screen>
+			<screen>
+				<screenID>step_42</screenID>
+				<video>/video/Task 42 - Close MS Word.mp4</video>
+				<vid_caption>Task 42 - Close MS Word</vid_caption>
+				<image>/shared_images/close_button_red.png</image>
+			</screen>
+			<screen>
+				<screenID>step_43</screenID>
+				<video>/video/Task 43 - End of lesson.mp4</video>
+				<vid_caption>Task 43 - End of lesson</vid_caption>
+			</screen>
+		</lesson>
+		<lesson lesson_title="S4: Tax - What When and How" lesson_id="04" lesson_type="S">
+		</lesson>
+		<lesson lesson_title="S5: Calculating Costs" lesson_id="04" lesson_type="S">
+		</lesson>
+	</unit>
+	<unit unit_title="Word processing" unit_id="01">
+	</unit>
+</course>
