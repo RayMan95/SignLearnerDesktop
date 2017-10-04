@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package models;
 
 import java.util.ArrayList;
@@ -15,8 +10,14 @@ import java.util.Objects;
  */
 public class Lesson {
     private final String TITLE, ID, CATEGORY;
+<<<<<<< HEAD
     ArrayList<LessonActivity> lessonActivities;
     int index = 0;
+=======
+    private ArrayList<LessonActivity> ACTIVITIES;
+    private LessonActivity currActivity; // ?
+    private int INDEX = 0;
+>>>>>>> xml_parser
     
     /**
      * Only constructor
@@ -67,12 +68,11 @@ public class Lesson {
     // Getters and setters
     
     public void setActivities(ArrayList<LessonActivity> activities){
-        lessonActivities = new ArrayList<>();
-        for (LessonActivity la : activities){
-            lessonActivities.add(la);
-        }
+        ACTIVITIES = new ArrayList<>();
+        ACTIVITIES.addAll(activities);
     }
     
+<<<<<<< HEAD
     public LessonActivity getActivity(String activityID){
         LessonActivity activity = null;
         int i = 0;
@@ -96,6 +96,13 @@ public class Lesson {
         }
         
         return lessonActivities.get(index);
+=======
+    public LessonActivity getLessonActivity(String activityID){
+        for (LessonActivity LA : ACTIVITIES){
+            if (LA.getScreenID().equals(activityID)) return LA;
+        }
+        return null;
+>>>>>>> xml_parser
     }
     
     public String getTitle(){
@@ -112,6 +119,26 @@ public class Lesson {
     
     // Utility methods
     
+    public boolean hasNext(){
+        return (INDEX < (ACTIVITIES.size()-1));
+    }
+    
+    public LessonActivity next(){
+        if (!hasNext()) return null;
+        ++INDEX;
+        return ACTIVITIES.get(INDEX);
+    }
+    
+    public boolean hasPrevious(){
+        return (INDEX  > 0);
+    }
+    
+    public LessonActivity previous(){
+        if (!hasPrevious()) return null;
+        --INDEX;
+        return ACTIVITIES.get(INDEX);
+    }
+    
     @Override
     public boolean equals(Object other){
         if (!(other instanceof Lesson)){
@@ -127,11 +154,11 @@ public class Lesson {
     
     @Override
     public String toString(){
-        String details = ID + ") " + TITLE + " [" + CATEGORY + "]";
-        if(lessonActivities != null){
-            for (LessonActivity LA : lessonActivities){
+        String details = "Lesson: " + ID + ") " + TITLE + " [" + CATEGORY + "]";
+        if(ACTIVITIES != null){
+            for (LessonActivity LA : ACTIVITIES){
                 details += "\n";
-                details += "    ";
+                details += "      ";
                 details += LA.toString();
             }
         }

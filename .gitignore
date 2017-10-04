@@ -12,6 +12,8 @@
 
 # Mutlimedia files
 *.mp4
+*.png
+e-learner.jpg
 
 # Package Files #
 *.jar

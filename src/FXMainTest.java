@@ -1,18 +1,7 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import javafx.application.Application;
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
-import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.parsers.SAXParser;
@@ -23,12 +12,22 @@ import org.xml.sax.SAXException;
 import org.xml.sax.XMLReader;
 
 /**
+<<<<<<< HEAD
  *
  * @author Rayaan Fakier
  */
 public class FXMainTest extends Application {
     
     private static SLSystem CONTROLLER;
+=======
+ * 
+ * @author  Luveshen Pillay, Christopher Mudongo, Rayaan Fakier
+ * @date 2017-09-05
+ */
+public class FXMainTest extends Application {
+    
+    private final static String FILE_NAME = "./res/xml/e learner self study.xml";
+>>>>>>> xml_parser
     
     @Override
     public void start(Stage primaryStage) {
@@ -46,12 +45,17 @@ public class FXMainTest extends Application {
         
 //        ArrayList<LessonList> units = CONTROLLER.getUnits(); // fully built-up units
         
+<<<<<<< HEAD
 //        selectLesson("06");
 //        selectActivity("step_5");
 //        nextActivity();
 //        prevActivity();
 //        lessonList();
         
+=======
+        ArrayList<Course> courses = xmlp.getCourses(); // fully built-up courses
+        System.out.println(courses.get(0).toString());
+>>>>>>> xml_parser
         System.exit(0);
     }
     

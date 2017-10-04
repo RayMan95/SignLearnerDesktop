@@ -1,20 +1,15 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package xmlparser;
+
 import models.*;
 import org.xml.sax.*;
 import org.xml.sax.helpers.*;
-
 import java.util.*;
 
 /**
  * Class containing functionality for building course structures by parsing XML
  * files created by the Authoring Tool
  * @author Rayaan Fakier
- * 
+ * @date 2017-09-05
  */
 public class XMLParser extends DefaultHandler {
     
@@ -30,11 +25,13 @@ public class XMLParser extends DefaultHandler {
     private boolean parsingTextNode = false;
     private StringBuilder stringBuilder;
     
-    private LessonList currLessonList = null; // currently highest level
+    private Course currCourse = null;
+    private Unit currUnit = null; 
     private Lesson currLesson = null;
     private LessonActivity currActivity = null;
     
-    private final ArrayList<LessonList> lessonLists = new ArrayList<>();
+    private final ArrayList<Course> courses = new ArrayList<>();
+    private final ArrayList<Unit> units = new ArrayList<>();
     private final ArrayList<Lesson> lessons = new ArrayList<>();
     private final ArrayList<LessonActivity> activities = new ArrayList<>();
     
@@ -52,14 +49,18 @@ public class XMLParser extends DefaultHandler {
     
         switch (localName) {
             case KEY_COURSE:
-//                System.out.println(KEY_COURSE); // skip for now
-                break;
-            case KEY_UNIT:
                 String title, id;
+                id = atts.getValue(0);
+                title = atts.getValue(1);                
+                currCourse = new Course(id, title);
+                break;
+                
+            case KEY_UNIT:
                 title = atts.getValue(0);
                 id = atts.getValue(1);
-                currLessonList = new LessonList(title, id);
+                currUnit = new Unit(title, id);
                 break;
+                
             case KEY_LESSON:
                 String category;
                 title = atts.getValue(0);
@@ -67,25 +68,31 @@ public class XMLParser extends DefaultHandler {
                 category = atts.getValue(2);
                 currLesson = new Lesson(title, id, category);
                 break;
+                
             case KEY_SCREEN:
                 currActivity = new LessonActivity();
                 break;
+                
             case KEY_SCREENID:
                 parsingTextNode = true;
                 stringBuilder = new StringBuilder();
                 break;
+                
             case KEY_VIDEO:
                 parsingTextNode = true;
                 stringBuilder = new StringBuilder();
                 break;
+                
             case KEY_VIDEO_CAPTION:
                 parsingTextNode = true;
                 stringBuilder = new StringBuilder();
                 break;
+                
             case KEY_IMAGE:
                 parsingTextNode = true;
                 stringBuilder = new StringBuilder();
                 break;
+                
             default:
                 System.out.println("Unknown tag = ERRRORRR");
                 break;
@@ -99,12 +106,20 @@ public class XMLParser extends DefaultHandler {
     throws SAXException {
         String text = "";
         switch (localName){
+            case KEY_COURSE:
+                if (!units.isEmpty()){
+                    currCourse.setUnits(units);
+                    units.clear();
+                }
+                courses.add(currCourse);
+                break;
+                
             case KEY_UNIT:
                 if (!lessons.isEmpty()){
-                    currLessonList.setLessons(lessons);
+                    currUnit.setLessons(lessons);
                     lessons.clear();
                 }
-                lessonLists.add(currLessonList);
+                units.add(currUnit);
                 break;
                 
             case KEY_LESSON:
@@ -147,8 +162,6 @@ public class XMLParser extends DefaultHandler {
                 currActivity.setImagePath(text);
                 break;
         }
-    
-    
     }
     
     @Override
@@ -157,7 +170,6 @@ public class XMLParser extends DefaultHandler {
         
         if (parsingTextNode)
             stringBuilder.append(ch, start, length); // append when parsing nodes
-    
     }
 
     @Override
@@ -166,8 +178,8 @@ public class XMLParser extends DefaultHandler {
         System.out.println("Done");
     }
     
-    public ArrayList<LessonList> getUnits(){
-        return lessonLists;
+    public ArrayList<Course> getCourses(){
+        return courses;
     }
 }
 

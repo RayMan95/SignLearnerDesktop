@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package models;
 
 /**
@@ -11,49 +6,53 @@ package models;
  * @date 2017-09-05
  */
 public class LessonActivity {
-    private String screenID, videoUrl, videoCaption, imagePath;
+    private String SCREEN_ID, VIDEO_URL, VID_CAPTION, IMG_PATH;
+    
+    // getters and setters
     
     public void setScreenID(String scrID){
-        screenID = scrID;
+        SCREEN_ID = scrID;
     }
     
     public void setVideoUrl(String vidURL){
-        videoUrl = vidURL;
+        VIDEO_URL = vidURL;
     }
     
     public void setVideoCaption(String vidCap){
-        videoCaption = vidCap;
+        VID_CAPTION = vidCap;
     }
     
     public void setImagePath(String imgPath){
-        imagePath = imgPath;
+        IMG_PATH = imgPath;
     }
     
     public String getScreenID(){
-        return screenID;
+        return SCREEN_ID;
     }
     
     public String getVideoUrl(){
-        return videoUrl;
+        return VIDEO_URL;
     }
     
     public String getVideoCaption(){
-        return videoCaption;
+        return VID_CAPTION;
     }
     
     public String getImagePath(){
-        return imagePath;
+        return IMG_PATH;
     }
     
     public String[] getAttributes(){
-        String[] atts = {screenID, videoUrl, videoCaption, imagePath};
+        String[] atts = {SCREEN_ID, VIDEO_URL, VID_CAPTION, IMG_PATH};
         return atts;
     }
     
+    // utility methods
+    
     @Override
     public String toString(){
-        String details = screenID + ") " + videoUrl + " " + videoCaption;
-        if(imagePath != null) details += " " + imagePath;
+        String details = SCREEN_ID + ") " + VIDEO_URL + " " + VID_CAPTION;
+        if(IMG_PATH != null) details += " " + IMG_PATH;
         else details += " [no image]";
         return details;
     }
