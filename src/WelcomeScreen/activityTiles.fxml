@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.media.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="121.0" prefWidth="295.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Label fx:id="titleLabel" layoutX="17.0" layoutY="14.0" prefHeight="31.0" prefWidth="145.0" text="Label">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="videoLabel" layoutX="17.0" layoutY="90.0" text="Label" />
+      <MediaView fitHeight="200.0" fitWidth="200.0" layoutX="109.0" layoutY="-27.0" />
+   </children>
+</Pane>

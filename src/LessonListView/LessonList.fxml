@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXListView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="200.0" prefWidth="200.0" stylesheets="@lessonlist.css" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="LessonListView.LessonListController">
+   <top>
+      <VBox prefHeight="58.0" prefWidth="200.0" style="-fx-background-color: #8067B7;">
+         <children>
+            <Label alignment="TOP_CENTER" contentDisplay="TOP" prefHeight="25.0" prefWidth="90.0" text="Lesson List" textFill="WHITE">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+            <HBox alignment="CENTER_LEFT" prefHeight="37.0" prefWidth="200.0" style="-fx-background-color: #ccff00;">
+               <children>
+                  <ImageView fitHeight="24.0" fitWidth="29.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../ActivityPlayerView/Icons/search.png" />
+                     </image>
+                  </ImageView>
+                  <Separator opacity="0.0" prefHeight="0.0" prefWidth="26.0" />
+                  <TextField fx:id="searchField" alignment="BASELINE_LEFT" minHeight="-Infinity" prefHeight="22.0" prefWidth="155.0" promptText="Lesson Name">
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                  </TextField>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </top>
+   <center>
+      <JFXListView id="listView" fx:id="listView" onMouseClicked="#loadLessons" prefHeight="365.0" prefWidth="209.0" BorderPane.alignment="CENTER" />
+   </center>
+   <bottom>
+      <HBox alignment="CENTER" prefHeight="40.0" prefWidth="200.0" style="-fx-background-color: #666666;" BorderPane.alignment="CENTER">
+         <children>
+            <JFXButton id="zoomInButton" fx:id="zoomInButton" alignment="CENTER" onAction="#zoomIn" prefHeight="35.0" prefWidth="35.0" />
+            <JFXButton id="zoomOutButton" fx:id="zoomOutButton" alignment="CENTER" contentDisplay="CENTER" onAction="#zoomOut" prefHeight="35.0" prefWidth="35.0" />
+         </children>
+      </HBox>
+   </bottom>
+</BorderPane>

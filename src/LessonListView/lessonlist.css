@@ -1,0 +1,50 @@
+/*
+ * LessonList CSS styles
+ * 
+ */
+
+.button{
+    -fx-background-size: 30 30;
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: center;
+     
+}
+.button:hover{
+    -fx-background-color: #FF8C00;
+}
+
+.label{
+    -fx-font-weight:bold;
+}
+
+.jfx-list-cell:selected{
+    -fx-background-color: #3dBc91;
+}
+
+.jfx-list-cell{
+    -fx-background-insets: 0.0;
+}
+
+.jfx-list-cell .jfx-rippler{
+    -fx-rippler-fill:BLUE;
+}
+
+.jfx-list-cell:hover{
+    -fx-background-color: #1bd79c;
+}
+
+.jfx-list-cell:empty {
+    -fx-opacity: 0;
+}
+
+#lessonsButton{
+    -fx-background-image: url("../ActivityPlayerView/Icons/Lessons.png");
+}
+
+#zoomInButton{
+    -fx-background-image: url("../ActivityPlayerView/Icons/zoomIn.png");
+}
+
+#zoomOutButton{
+    -fx-background-image: url("../ActivityPlayerView/Icons/zoomOut.png");
+}

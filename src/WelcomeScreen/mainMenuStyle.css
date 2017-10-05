@@ -1,0 +1,164 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Sep 19, 2017, 10:05:55 AM
+    Author     : Christopher Mudongo
+
+*/
+
+.background_pic{
+    -fx-background-color: #2196f1;
+   
+}
+.bottom_Top_Panel{
+    -fx-background-color: #282929;
+      
+}
+
+.homeButton {
+    -fx-font-weight: bold;
+    -fx-background-color: #2196f3;
+    -fx-background-radius: 22;
+    -fx-font-size: 14;
+    -fx-text-fill: white;
+}
+.homeButton:hover{
+    -fx-font-weight: bold;
+    -fx-background-color: white;
+    -fx-background-radius: 22;
+    -fx-font-size: 14;
+    -fx-text-fill: #2196f3;
+    -fx-border-color: #2196f3;
+    -fx-border-radius: 20;
+    -fx-border-width: 3;
+}
+
+.homeButton:pressed{
+    -fx-font-weight: bold;
+    -fx-background-color: white;
+    -fx-background-radius: 22;
+    -fx-font-size: 14;
+    -fx-text-fill: #2196f3;
+    -fx-border-color: #2196f3;
+    -fx-border-radius: 20;
+    -fx-border-width: 3;
+    -fx-rotate: 5;
+}
+
+.lessonButton{
+    -fx-font-weight: bold;
+    -fx-background-color: #2196f3;
+    -fx-background-radius: 22;
+    -fx-font-size: 14;
+    -fx-text-fill: white;   
+}
+
+.lessonButton:hover{
+    -fx-font-weight: bold;
+    -fx-background-color: white;
+    -fx-background-radius: 22;
+    -fx-font-size: 14;
+    -fx-text-fill: #2196f3;
+    -fx-border-color: #2196f3;
+    -fx-border-radius: 20;
+    -fx-border-width: 3;
+}
+
+.lessonButton:pressed{
+    -fx-font-weight: bold;
+    -fx-background-color: white;
+    -fx-background-radius: 22;
+    -fx-font-size: 14;
+    -fx-text-fill: #2196f3;
+    -fx-border-color: #2196f3;
+    -fx-border-radius: 20;
+    -fx-border-width: 3;
+    -fx-rotate: 5;
+}
+
+.exitButton{
+    -fx-font-weight: bold;
+    -fx-background-color: #ff4d4d;
+    -fx-background-radius: 22;
+    -fx-font-size: 14;
+    -fx-text-fill: white;   
+}
+
+.exitButton:hover{
+    -fx-font-weight: bold;
+    -fx-background-color: white;
+    -fx-background-radius: 22;
+    -fx-font-size: 14;
+    -fx-text-fill: #ff4d4d;
+    -fx-border-color: #ff4d4d;
+    -fx-border-radius: 20;
+    -fx-border-width: 3;
+}
+
+.exitButton:pressed{
+    -fx-font-weight: bold;
+    -fx-background-color: white;
+    -fx-background-radius: 22;
+    -fx-font-size: 14;
+    -fx-text-fill: #ff4d4d;
+    -fx-border-color: #ff4d4d;
+    -fx-border-radius: 20;
+    -fx-border-width: 3;
+    -fx-rotate: 5;
+}
+
+.lessonView{
+    -fx-background-color: #cce6ff;
+}
+
+.returnLessonButton {
+    -fx-font-weight: bold;
+    -fx-background-color: #2196f3;
+    -fx-background-radius: 22;
+    -fx-font-size: 14;
+    -fx-text-fill: white;
+}
+.returnLessonButton:hover{
+    -fx-font-weight: bold;
+    -fx-background-color: white;
+    -fx-background-radius: 22;
+    -fx-font-size: 14;
+    -fx-text-fill: #2196f3;
+    -fx-border-color: #2196f3;
+    -fx-border-radius: 20;
+    -fx-border-width: 3;
+}
+
+.returnLessonButton:pressed{
+    -fx-font-weight: bold;
+    -fx-background-color: white;
+    -fx-background-radius: 22;
+    -fx-font-size: 14;
+    -fx-text-fill: #2196f3;
+    -fx-border-color: #2196f3;
+    -fx-border-radius: 20;
+    -fx-border-width: 3;
+    -fx-rotate: 5;
+}
+
+.play{
+    -fx-font-weight: bold;
+    -fx-background-color:yellowgreen;
+    -fx-background-radius: 22;
+    -fx-font-size: 14;
+    -fx-text-fill: white;
+}
+
+.play:hover{
+    -fx-font-weight: bold;
+    -fx-background-color: white;
+    -fx-background-radius: 22;
+    -fx-font-size: 14;
+    -fx-text-fill: yellowgreen;
+    -fx-border-color: yellowgreen;
+    -fx-border-radius: 20;
+    -fx-border-width: 3;
+}

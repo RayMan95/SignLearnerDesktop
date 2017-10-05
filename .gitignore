@@ -8,10 +8,13 @@
 *.ctxt
 
 # Mobile Tools for Java (J2ME)
-.mtj.tmp/
+.mtj
+.tmp/
 
 # Mutlimedia files
 *.mp4
+*.png
+e-learner.jpg
 
 # Package Files #
 *.jar
