@@ -41,7 +41,7 @@ public class LessonActivity {
     }
 
     /**
-     * Get this Lesson's title
+     * Get this LessonActivity's screen ID
      * @return SCREEN_ID
      */
     public String getScreenID(){
@@ -49,7 +49,7 @@ public class LessonActivity {
     }
 
     /**
-     * Get this Lesson's title
+     * Get this LessonActivity's video URL
      * @return VIDEO_URL
      */
     public String getVideoUrl(){
@@ -57,7 +57,7 @@ public class LessonActivity {
     }
 
     /**
-     * Get this Lesson's title
+     * Get this LessonActivity's video caption
      * @return VID_CAPTION
      */
     public String getVideoCaption(){
@@ -65,7 +65,7 @@ public class LessonActivity {
     }
 
    /**
-     * Get this Lesson's title
+     * Get this LessonActivity's image path
      * @return IMG_PATH
      */
     public String getImagePath(){

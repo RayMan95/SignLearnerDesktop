@@ -5,6 +5,7 @@
  */
 package WelcomeScreen;
 
+import Controller.SLSystem;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.fxml.Initializable;
@@ -34,7 +35,7 @@ import models.*;
 public class WelcomeScreenController implements Initializable {
     
     SLSystem sls;
-    LessonList lessonList;
+    Unit unit;
     @FXML
     private Button enterLessonListButton;
     @FXML

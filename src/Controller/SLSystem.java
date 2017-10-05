@@ -1,3 +1,5 @@
+package Controller;
+
 
 import java.io.File;
 import java.io.IOException;
@@ -108,4 +110,8 @@ public class SLSystem {
     public ArrayList<Unit> getUnits(){
         return UNITS;
     }
+    
+    public Unit listLessons(){
+        return UNITS.get(0);
+    }        
 }

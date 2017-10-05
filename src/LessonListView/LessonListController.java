@@ -38,7 +38,7 @@ import javafx.stage.Screen;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 import models.Lesson;
-import models.LessonList;
+import models.Unit;
 
 /**
  * FXML Controller class
@@ -48,7 +48,7 @@ import models.LessonList;
 public class LessonListController implements Initializable {
 
     SLSystem slsystem;
-    LessonList lessonList;
+    Unit unit;
 
     @FXML
     private JFXListView<Label> listView;
@@ -96,7 +96,7 @@ public class LessonListController implements Initializable {
             LessonViewController controller
                     = loader.<LessonViewController>getController();
             // Set lesson to be presented in lessonView 
-            controller.initData(lessonList.getLessonbyTitle(title));
+            controller.initData(unit.getLesson(title));
             stage.setScene(scene);
             stage.show();
         } 
@@ -128,10 +128,10 @@ public class LessonListController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         
         slsystem = new SLSystem();
-        lessonList = slsystem.listLessons();
+        unit = slsystem.listLessons();
         ObservableList<Label> data = FXCollections.observableArrayList();//
 
-        ArrayList<Lesson> arr = lessonList.getAll();
+        ArrayList<Lesson> arr = unit.getAll();
         for (Lesson l : arr) {
             Label lbl = new Label(l.getTitle());
             data.add(lbl);

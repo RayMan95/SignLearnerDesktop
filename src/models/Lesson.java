@@ -34,6 +34,18 @@ public class Lesson {
     public void addActivities(ArrayList<LessonActivity> activities){
         ACTIVITIES.addAll(activities);
     }
+    
+    public ArrayList<LessonActivity> getLessonActivities(){
+        return ACTIVITIES;
+    }
+    
+    public LessonActivity getActivity (String activityTitle){
+        for (LessonActivity a : ACTIVITIES){
+            if (a.getScreenID().equals(activityTitle)) return a;
+        }
+        
+        return null;
+    }
 
     /**
      * Get this Lesson's title

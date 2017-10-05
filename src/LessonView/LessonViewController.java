@@ -72,11 +72,11 @@ public class LessonViewController implements Initializable {
     public void initData(Lesson lesson){
         this.lesson=lesson;
 
-        ArrayList<String> arr = lesson.getLessonActivities();
+        ArrayList<LessonActivity> arr = lesson.getLessonActivities();
 
         ObservableList<Label> data = FXCollections.observableArrayList();//
-        for(String l:arr){
-            Label lbl = new Label(l);
+        for(LessonActivity la : arr){
+            Label lbl = new Label(la.getScreenID());
             data.add(lbl);
         }
         

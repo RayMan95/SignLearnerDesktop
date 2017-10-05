@@ -141,7 +141,7 @@ public class VideoFXMLController implements Initializable {
        try{
         mediaPlayer.pause();
         if (lesson.hasNext()) {
-            setActivity(lesson, lesson.getNext());
+            setActivity(lesson, lesson.next());
             Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
             stage.setTitle("SignLearner - "+activity.getScreenID());
 
@@ -177,7 +177,7 @@ public class VideoFXMLController implements Initializable {
         mediaPlayer.pause();
         try {
             if (lesson.hasPrevious()) {
-                setActivity(lesson, lesson.getPrevious());
+                setActivity(lesson, lesson.previous());
                 Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
                 stage.setTitle("SignLearner - " + activity.getScreenID());
             } else {
@@ -372,7 +372,7 @@ public class VideoFXMLController implements Initializable {
     }
 
     /**
-     * Loads a LessonList scene
+     * Loads a Unit scene
      *
      * @param event
      * @throws IOException

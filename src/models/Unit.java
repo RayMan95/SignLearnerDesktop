@@ -47,6 +47,17 @@ public class Unit {
         return UNIT_ID;
     }
     
+    public Lesson getLesson(String lessonTitle){
+        for (Lesson l : LESSONS){
+            if (l.getTitle().equals(lessonTitle)) return l;
+        }
+        return null;
+    }
+    
+    public ArrayList<Lesson> getAll(){
+        return LESSONS;
+    }
+    
     /**
      * Has another Lesson in LESSONS
      * @return true if current index is before end
