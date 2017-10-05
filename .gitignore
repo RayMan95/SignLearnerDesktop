@@ -33,3 +33,7 @@ hs_err_pid*
 build.xml
 /dist
 /build
+classes.txt
+
+# lib folder for testing
+/lib
