@@ -10,10 +10,11 @@ import java.util.ArrayList;
  */
 public class Course {
     private final String COURSE_ID, COURSE_TITLE;
-    private ArrayList<Unit> UNITS;
+    private final ArrayList<Unit> UNITS;
     private int INDEX = -1;
     
     public Course(String ID, String title){
+        UNITS = new ArrayList<>();
         COURSE_ID = ID;
         COURSE_TITLE = title;
     }
@@ -39,7 +40,6 @@ public class Course {
     }
     
     public void setUnits(ArrayList<Unit> units){
-        UNITS = new ArrayList<>();
         UNITS.addAll(units);
     }
     

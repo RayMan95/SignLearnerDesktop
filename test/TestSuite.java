@@ -1,7 +1,6 @@
-package test;
-
 import org.junit.runner.RunWith;
 import org.junit.runners.Suite;
+import org.junit.Test;
 /**
 * Test class aggregator.
 * 
@@ -10,7 +9,7 @@ import org.junit.runners.Suite;
 */
 @RunWith(Suite.class)
 @Suite.SuiteClasses({
-	 /*<class> , <next class>, <next class>, ... */
+	 /* AutoTest.class */
 })
 
 public class TestSuite { /* Holder for above annotations. */}

@@ -17,7 +17,7 @@ import xmlparser.XMLParser;
  */
 public class SLSystem {
 
-    private final static String FILE_NAME = "./res/xml/e learner self study.xml"; // start pos: SignLearnerDesktop/dist
+    private final static String FILE_NAME = "./res/xml/e learner self study.xml"; // ensure directory structure outlined in README
     private ArrayList<Course> COURSES = new ArrayList<>();
     private ArrayList<Unit> UNITS = new ArrayList<>();
 

@@ -9,10 +9,11 @@ import java.util.ArrayList;
  */
 public class Unit {
     private final String UNIT_TITLE, UNIT_ID;
-    private ArrayList<Lesson> LESSONS;
-    private int INDEX = 0;
+    private final ArrayList<Lesson> LESSONS;
+    private int INDEX = -1;
     
     public Unit(String unit, String uid){
+        LESSONS = new ArrayList<>();
         UNIT_TITLE = unit;
         UNIT_ID = uid;
     }
@@ -20,7 +21,6 @@ public class Unit {
     // getters and setters
     
     public void setLessons(ArrayList<Lesson> lessons){
-        LESSONS = new ArrayList<>();
         LESSONS.addAll(lessons);
     }
     
@@ -32,9 +32,18 @@ public class Unit {
         return null;
     }
     
+    public String getTitle(){
+        return UNIT_TITLE;
+    }
+    
+    public String getID(){
+        return UNIT_ID;
+    }
+    
     // utility methods
     
     public boolean hasNext(){
+        
         return (INDEX < (LESSONS.size()-1));
     }
     
@@ -57,12 +66,10 @@ public class Unit {
     @Override
     public String toString(){
         String details = "Unit: " + UNIT_ID + ")" + UNIT_TITLE;
-        if(LESSONS != null){
-            for (Lesson L : LESSONS){
-                details += "\n";
-                details += "    ";
-                details += L.toString();
-            }
+        for (Lesson L : LESSONS){
+            details += "\n";
+            details += "    ";
+            details += L.toString();
         }
         return details;
     }

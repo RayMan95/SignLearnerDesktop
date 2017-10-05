@@ -11,7 +11,7 @@ import java.util.Objects;
 public class Lesson {
     private final String TITLE, ID, CATEGORY;
 
-    private ArrayList<LessonActivity> ACTIVITIES;
+    private final ArrayList<LessonActivity> ACTIVITIES;
     private LessonActivity currActivity; // ?
     private int INDEX = 0;
 
@@ -22,6 +22,7 @@ public class Lesson {
      * @param cat Category of lesson
      */
     public Lesson(String title, String id, String cat){
+        ACTIVITIES = new ArrayList<>();
         TITLE = title;
         ID = id;
         CATEGORY = cat;
@@ -30,7 +31,6 @@ public class Lesson {
     // Getters and setters
 
     public void setActivities(ArrayList<LessonActivity> activities){
-        ACTIVITIES = new ArrayList<>();
         ACTIVITIES.addAll(activities);
     }
 
@@ -91,7 +91,7 @@ public class Lesson {
     @Override
     public String toString(){
         String details = "Lesson: " + ID + ") " + TITLE + " [" + CATEGORY + "]";
-        if(ACTIVITIES != null){
+        if(!ACTIVITIES.isEmpty()){
             for (LessonActivity LA : ACTIVITIES){
                 details += "\n";
                 details += "      ";
