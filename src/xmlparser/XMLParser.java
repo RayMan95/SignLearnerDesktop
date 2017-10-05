@@ -9,7 +9,7 @@ import java.util.*;
  * Class containing functionality for building course structures by parsing XML
  * files created by the Authoring Tool
  * @author  Luveshen Pillay, Christopher Mudongo, Rayaan Fakier
- * @date 2017-09-05
+ * @version 2017-09-05
  */
 public class XMLParser extends DefaultHandler {
 
@@ -108,7 +108,7 @@ public class XMLParser extends DefaultHandler {
         switch (localName){
             case KEY_COURSE:
                 if (!units.isEmpty()){
-                    currCourse.setUnits(units);
+                    currCourse.addUnits(units);
                     units.clear();
                 }
                 courses.add(currCourse);
@@ -116,7 +116,7 @@ public class XMLParser extends DefaultHandler {
 
             case KEY_UNIT:
                 if (!lessons.isEmpty()){
-                    currUnit.setLessons(lessons);
+                    currUnit.addLessons(lessons);
                     lessons.clear();
                 }
                 units.add(currUnit);
@@ -124,7 +124,7 @@ public class XMLParser extends DefaultHandler {
 
             case KEY_LESSON:
                 if (!activities.isEmpty()){
-                    currLesson.setActivities(activities);
+                    currLesson.addActivities(activities);
                     activities.clear();
                 }
                 lessons.add(currLesson);
@@ -178,6 +178,10 @@ public class XMLParser extends DefaultHandler {
         System.out.println("Done");
     }
 
+    /**
+     * Gets the {@code ArrayList<Course>} containing all items created by parsing the provided XML
+     * @return all courses as an {@code ArrayList<Course>}
+     */
     public ArrayList<Course> getCourses(){
         return courses;
     }

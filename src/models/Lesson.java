@@ -1,12 +1,11 @@
 package models;
 
 import java.util.ArrayList;
-import java.util.Objects;
 
 /**
  * Class representing the Lesson object in the SignLearner tool
  * @author  Luveshen Pillay, Christopher Mudongo, Rayaan Fakier
- * @date 2017-09-05
+ * @version 2017-09-05
  */
 public class Lesson {
     private final String TITLE, ID, CATEGORY;
@@ -28,47 +27,68 @@ public class Lesson {
         CATEGORY = cat;
     }
 
-    // Getters and setters
-
-    public void setActivities(ArrayList<LessonActivity> activities){
+    /**
+     * Add LessonActivitys to ACTIVITIES
+     * @param activities LessonActivitys to be added
+     */   
+    public void addActivities(ArrayList<LessonActivity> activities){
         ACTIVITIES.addAll(activities);
     }
 
-    public LessonActivity getLessonActivity(String activityID){
-        for (LessonActivity LA : ACTIVITIES){
-            if (LA.getScreenID().equals(activityID)) return LA;
-        }
-        return null;
-    }
-
+    /**
+     * Get this Lesson's title
+     * @return TITLE
+     */
     public String getTitle(){
         return TITLE;
     }
 
+    /**
+     * Get this Lesson's ID
+     * @return ID
+     */
     public String getID(){
         return ID;
     }
 
+    /**
+     * Get this Lesson's category
+     * @return CATEGORY
+     */
     public String getCategory(){
         return CATEGORY;
     }
-
-    // Utility methods
-
+    
+    /**
+     * Has another LessonActivity in ACTIVITIES
+     * @return true if current index is before end
+     */
     public boolean hasNext(){
         return (INDEX < (ACTIVITIES.size()-1));
     }
 
+    /**
+     * Get next LessonActivity in ACTIVITIES
+     * @return next LessonActivity, or false if it does not exist
+     */
     public LessonActivity next(){
         if (!hasNext()) return null;
         ++INDEX;
         return ACTIVITIES.get(INDEX);
     }
 
+    /**
+     * Has a previous LessonActivity in ACTIVITIES
+     * @return true if current index is before start
+     */
     public boolean hasPrevious(){
         return (INDEX  > 0);
     }
 
+    /**
+     * Get previous LessonActivity in ACTIVITIES
+     * @return previous LessonActivity, or false if it does not exist
+     */
     public LessonActivity previous(){
         if (!hasPrevious()) return null;
         --INDEX;

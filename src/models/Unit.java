@@ -5,58 +5,79 @@ import java.util.ArrayList;
 /**
  * Class representing the Unit object in the SignLearner tool
  * @author  Luveshen Pillay, Christopher Mudongo, Rayaan Fakier
- * @date 2017-09-05
+ * @version 2017-09-05
  */
 public class Unit {
     private final String UNIT_TITLE, UNIT_ID;
     private final ArrayList<Lesson> LESSONS;
     private int INDEX = -1;
     
-    public Unit(String unit, String uid){
+    /**
+     * Only constructor, sets Unit title and ID
+     * @param unitTitle title of this Unit
+     * @param unitID ID of this Unit
+     */
+    public Unit(String unitTitle, String unitID){
         LESSONS = new ArrayList<>();
-        UNIT_TITLE = unit;
-        UNIT_ID = uid;
+        UNIT_TITLE = unitTitle;
+        UNIT_ID = unitID;
     }
     
-    // getters and setters
-    
-    public void setLessons(ArrayList<Lesson> lessons){
+    /**
+     * Add Lessons to LESSONS
+     * @param lessons Lessons to be added
+     */    
+    public void addLessons(ArrayList<Lesson> lessons){
         LESSONS.addAll(lessons);
     }
     
-    public Lesson getLesson(String lessonTitle, String lessonID){
-        for (Lesson L : LESSONS){
-            if (L.getTitle().equals(lessonTitle) && L.getID().equals(lessonID)) 
-                return L;
-        }
-        return null;
-    }
-    
+    /**
+     * Get this Unit's title
+     * @return UNIT_TITLE
+     */
     public String getTitle(){
         return UNIT_TITLE;
     }
     
+    /**
+     * Get this Unit's ID
+     * @return UNIT_ID
+     */
     public String getID(){
         return UNIT_ID;
     }
     
-    // utility methods
-    
+    /**
+     * Has another Lesson in LESSONS
+     * @return true if current index is before end
+     */
     public boolean hasNext(){
         
         return (INDEX < (LESSONS.size()-1));
     }
     
+    /**
+     * Get next Lesson in LESSONS
+     * @return next Lesson, or false if it does not exist
+     */
     public Lesson next(){
         if (!hasNext()) return null;
         ++INDEX;
         return LESSONS.get(INDEX);
     }
     
+    /**
+     * Has a previous Lessons in LESSONS
+     * @return true if current index is before start
+     */
     public boolean hasPrevious(){
         return (INDEX  > 0);
     }
     
+    /**
+     * Get previous Lessons in LESSONS
+     * @return previous Lesson, or false if it does not exist
+     */
     public Lesson previous(){
         if (!hasPrevious()) return null;
         --INDEX;

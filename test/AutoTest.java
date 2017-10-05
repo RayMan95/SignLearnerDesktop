@@ -5,12 +5,13 @@ import org.junit.Test;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertArrayEquals;
 
 /**
  * Write a description of class AutoHarness here.
  * 
  * @author Luveshen Pillay, Christopher Mudongo, Rayaan Fakier	
- * @date 2017/09/25
+ * @version 2017/09/25
  */
 public class AutoTest {
 
@@ -23,12 +24,16 @@ public class AutoTest {
         
         Unit U = UNITS.get(0);
         
+        // Unit getters
         assertEquals(U.getID(), "02");
         assertEquals(U.getTitle(), "Word Processing ");
+        assertEquals(U.toString(), uString);
 
         Unit otherU = UNITS.get(1);
         assertEquals(otherU.getID(), "01");
         assertEquals(otherU.getTitle(), "Word processing");
+        
+        // Unit navigation
         assertTrue(otherU.next() == null);
         assertTrue(otherU.previous() == null);
         
@@ -38,13 +43,34 @@ public class AutoTest {
         L = U.next();
         assertTrue(U != null);
         
+        // Lesson getters
         assertEquals(L.getCategory(), "O");
         assertEquals(L.getID(), "01");
         assertEquals(L.getTitle(), "O1: Getting to know your computer");
         
-        assertEquals(U.toString(), uString);
+        // Lesson navigation
+        assertFalse(L.hasNext());
+        assertFalse(L.hasPrevious());
         
+        // increment to only Lesson with Activities
+        for (int i = 0; i < 4; ++i){
+            U.next();
+        }
+        L = U.next();        
+        LessonActivity LA = L.next();
         
+        // LessonActivity getters
+        String[] atts = {"lesson_description_2", "/video/What is an organization.mp4", "What is an organization", null};
+        assertArrayEquals(LA.getAttributes(), atts);
+        
+        String attribute = LA.getScreenID();
+        assertEquals(attribute, atts[0]);
+        attribute = LA.getVideoUrl();
+        assertEquals(attribute, atts[1]);
+        attribute = LA.getVideoCaption();
+        assertEquals(attribute, atts[2]);
+        attribute = LA.getImagePath();
+        assertEquals(attribute, atts[3]);
     }
     
     private final String uString = "Unit: 02)Word Processing \n" +

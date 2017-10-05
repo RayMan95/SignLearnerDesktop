@@ -13,7 +13,7 @@ import xmlparser.XMLParser;
 /**
  * Class representing controller of the application
  * @author  Luveshen Pillay, Christopher Mudongo, Rayaan Fakier
- * @date 2017-09-05
+ * @version 2017-09-05
  */
 public class SLSystem {
 
@@ -26,6 +26,9 @@ public class SLSystem {
     private Lesson currLesson;
     private LessonActivity currActivity;
 
+    /**
+     * Class used as intermediary between views and models, serves to provide application logic
+     */
     public SLSystem(){
 
         try{
@@ -40,41 +43,27 @@ public class SLSystem {
             // ?
         }
     }
-
-//    public Lesson getLesson(String lessonID){
-//        Lesson lesson = currLessonList.getLesson(lessonID);
-//        if(lesson != null){
-//            currLesson = lesson;
-//            currActivity = lesson.getActivity(0);
-//        }
-//        return lesson;
-//    }
-//
-//    public LessonActivity getActivity(String lessonActivityID){
-//        LessonActivity la = currLesson.getActivity(lessonActivityID);
-//        if (la != null) currActivity = la;
-//        return la;
-//    }
-
-    public LessonActivity getNextActivity(){
+    
+    /**
+     * Gets next LessonActivity from current Lesson
+     * @return next LessonActivity
+     */
+    public LessonActivity next(){
         LessonActivity la = currLesson.next();
         if (la != null) currActivity = la;
         return la;
     }
 
-    public LessonActivity getPreviousActivity(){
+    /**
+     * Gets previous LessonActivity from current Lesson
+     * @return previous LessonActivity
+     */
+    public LessonActivity previous(){
         LessonActivity la = currLesson.previous();
         if (la != null) currActivity = la;
         return la;
     }
 
-    public Unit listUnits(){
-        currLesson = null;
-        currActivity = null;
-
-        return currUnit;
-    }
-    
     /**
      * Uses SAXParserFactory to parse XML input (from Authoring Tool) and produces
      * curriculum structure
@@ -112,6 +101,10 @@ public class SLSystem {
         return "file:" + path;
     }
 
+    /**
+     * Returns {@code ArrayList<Unit>} of all units in this Course
+     * @return UNITS
+     */
     public ArrayList<Unit> getUnits(){
         return UNITS;
     }

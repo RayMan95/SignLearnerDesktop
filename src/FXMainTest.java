@@ -28,8 +28,9 @@ public class FXMainTest extends Application {
     /**
      * Main method
      * @param args the command line arguments
-     * @throws org.xml.sax.SAXException
-     * @throws javax.xml.parsers.ParserConfigurationException
+     * @throws org.xml.sax.SAXException by XMLParser during tag catching
+     * @throws javax.xml.parsers.ParserConfigurationException by SLSystem during XMLParser creation
+     * @throws java.io.IOException by SLSystem during file reading
      */
     public static void main(String[] args) throws SAXException, ParserConfigurationException, IOException {
 //        launch(args);
@@ -59,14 +60,14 @@ public class FXMainTest extends Application {
 
     // On lesson activity screen
     private static void nextActivity(){
-        LessonActivity la = CONTROLLER.getNextActivity();
+        LessonActivity la = CONTROLLER.next();
         if (la == null) ; // do something
         // set view accordingly
     }
 
     // On lesson activity screen
     private static void prevActivity(){
-        LessonActivity la = CONTROLLER.getPreviousActivity();
+        LessonActivity la = CONTROLLER.previous();
         if (la == null) ; // do something
         // set view accordingly
     }
