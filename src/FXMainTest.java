@@ -33,31 +33,29 @@ public class FXMainTest extends Application {
      */
     public static void main(String[] args) throws SAXException, ParserConfigurationException, IOException {
 //        launch(args);
-
         CONTROLLER = new SLSystem();
-
 //        ArrayList<LessonList> units = CONTROLLER.getUnits(); // fully built-up units
-        ArrayList<Course> courses = xmlp.getCourses(); // fully built-up courses
+        ArrayList<Unit> units = CONTROLLER.getUnits(); // fully built-up courses
         // System.out.println(courses.get(0).toString());
 
         System.exit(0);
     }
 
     // On lesson list screen
-    private static void selectLesson(String selectedLessonID){
-        Lesson lesson = CONTROLLER.getLesson(selectedLessonID);
-        if (lesson == null) ; // do something
+//    private static void selectLesson(String selectedLessonID){
+//        Lesson lesson = CONTROLLER.getLesson(selectedLessonID);
+//        if (lesson == null) ; // do something
 //        else System.out.println(lesson.toString());
         // set view accordingly
-    }
+//    }
 
     // On lesson screen
-    private static void selectActivity(String selectedScreenID){
-        LessonActivity la = CONTROLLER.getActivity(selectedScreenID);
-        if (la == null) ; // do something
+//    private static void selectActivity(String selectedScreenID){
+//        LessonActivity la = CONTROLLER.getActivity(selectedScreenID);
+//        if (la == null) ; // do something
 //        else System.out.println(la.toString());
         // set view accordingly
-    }
+//    }
 
     // On lesson activity screen
     private static void nextActivity(){
@@ -74,8 +72,8 @@ public class FXMainTest extends Application {
     }
 
     // On lesson activity screen
-    private static void units(){
-        Unit u = CONTROLLER.listLessons();
+//    private static void units(){
+//        Unit u = CONTROLLER.listLessons();
         // set view accordingly
-    }
+//    }
 }

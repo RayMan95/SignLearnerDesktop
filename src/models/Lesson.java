@@ -34,31 +34,6 @@ public class Lesson {
         ACTIVITIES.addAll(activities);
     }
 
-    public LessonActivity getActivity(String activityID){
-        LessonActivity activity = null;
-        int i = 0;
-        for (LessonActivity la : lessonActivities){
-
-            if (la.getScreenID().equals(activityID)){
-                activity = la;
-                index = i;
-            }
-            ++i;
-        }
-
-        return activity;
-    }
-
-    public LessonActivity getActivity(int i){
-        if (!hasActivities()) return null;
-        if (i < 0 || i >= lessonActivities.size()){
-            index = i;
-            return null;
-        }
-
-        return lessonActivities.get(index);
-    }
-
     public LessonActivity getLessonActivity(String activityID){
         for (LessonActivity LA : ACTIVITIES){
             if (LA.getScreenID().equals(activityID)) return LA;

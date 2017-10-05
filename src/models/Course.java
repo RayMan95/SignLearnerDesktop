@@ -11,7 +11,7 @@ import java.util.ArrayList;
 public class Course {
     private final String COURSE_ID, COURSE_TITLE;
     private ArrayList<Unit> UNITS;
-    private int INDEX = 0;
+    private int INDEX = -1;
     
     public Course(String ID, String title){
         COURSE_ID = ID;
@@ -41,6 +41,10 @@ public class Course {
     public void setUnits(ArrayList<Unit> units){
         UNITS = new ArrayList<>();
         UNITS.addAll(units);
+    }
+    
+    public ArrayList<Unit> getUnits(){
+        return UNITS;
     }
     
     @Override
