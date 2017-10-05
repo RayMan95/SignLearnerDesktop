@@ -1,5 +1,9 @@
 # SignLearnerDesktop
 
+* lib directory:
+    * The project requires a lib directory to be kept in the starting directory (i.e. the directory which contains src, res, .gitignore, README.MD, etc.)
+    * The lib directory will be ignored in the .gitignore folder as it contains binary JAR (.jar) files
+    * The lib directory and its contents can be downloaded from Vula, but will be provided by one of the project members.
 
 * res directory:
     * Contains resources needed for courses (from icdl folder, Vula) in 4 folders:
